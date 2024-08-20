@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: "Plus Jakarta Sans", system-ui;
+    font-optical-sizing: auto;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    display: none;
+}

@@ -16,9 +16,11 @@ class CampaignController extends Controller
         $this->service = $service;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $page = $request->get('page', 1);
+        $perPage = $request->get('perPage', 10);
+        $data = $this->service->all(paginate: true, page: $page, dataPerPage: $perPage);
     }
 
 
@@ -28,10 +30,7 @@ class CampaignController extends Controller
     }
 
 
-    public function store(CampaignRequest $request)
-    {
-        //
-    }
+    public function store(CampaignRequest $request) {}
 
 
     public function show($id)
