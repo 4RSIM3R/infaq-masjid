@@ -2,62 +2,57 @@
 
 namespace App\Http\Controllers;
 
+use App\Contract\CampaignContract;
+use App\Http\Requests\CampaignRequest;
 use Illuminate\Http\Request;
 
 class CampaignController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
+    protected CampaignContract $service;
+
+    public function __construct(CampaignContract $service)
+    {
+        $this->service = $service;
+    }
+
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+
+    public function store(CampaignRequest $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+
+    public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+
+    public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+
+    public function update(CampaignRequest $request,  $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+
+    public function destroy($id)
     {
         //
     }

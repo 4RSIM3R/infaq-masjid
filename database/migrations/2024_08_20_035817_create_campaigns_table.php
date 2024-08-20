@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('campaigns', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->decimal('target', 19, 2)->default(0);
             $table->timestamps();
         });
     }

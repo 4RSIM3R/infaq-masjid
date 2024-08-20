@@ -11,7 +11,7 @@ class DonationRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class DonationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'campaign_id' => 'required|exists:campaigns,id',
+            'donatur' => 'required|string',
+            'phone_number' => 'required|string',
+            'amount' => 'required|numeric',
         ];
     }
 }
