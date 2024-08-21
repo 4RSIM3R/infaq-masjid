@@ -35,8 +35,11 @@ class EventController extends Controller
     public function store(EventRequest $request)
     {
         $payload = $request->validated();
+        $thumbnail = $request->file('thumbnail');
 
-        $result = $this->service->create($payload);
+        unset($payload['thumbnail']);
+
+        $result = $this->service->create($payload, image: ["thumbnail" => $thumbnail]);
 
         if ($result instanceof Exception) {
             return redirect()->back()->withErrors($result->getMessage());
@@ -62,8 +65,9 @@ class EventController extends Controller
     public function update(EventRequest $request,  $id)
     {
         $payload = $request->validated();
-
-        $result = $this->service->update($payload, $id);
+        $thumbnail = $request->file('thumbnail');
+        unset($payload['thumbnail']);
+        $result = $this->service->update($payload, $id, image: ["thumbnail" => $thumbnail]);
 
         if ($result instanceof Exception) {
             return redirect()->back()->withErrors($result->getMessage());

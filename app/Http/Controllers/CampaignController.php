@@ -35,8 +35,9 @@ class CampaignController extends Controller
     public function store(CampaignRequest $request)
     {
         $payload = $request->validated();
-
-        $result = $this->service->create($payload);
+        $thumbnail = $request->file('thumbnail');
+        unset($payload['thumbnail']);
+        $result = $this->service->create($payload, image: ["thumbnail" => $thumbnail]);
 
         if ($result instanceof Exception) {
             return redirect()->back()->withErrors($result->getMessage());
@@ -59,8 +60,9 @@ class CampaignController extends Controller
     public function update(CampaignRequest $request,  $id)
     {
         $payload = $request->validated();
-
-        $result = $this->service->update($payload, $id);
+        $thumbnail = $request->file('thumbnail');
+        unset($payload['thumbnail']);
+        $result = $this->service->update($payload, $id, image: ["thumbnail" => $thumbnail]);
 
         if ($result instanceof Exception) {
             return redirect()->back()->withErrors($result->getMessage());

@@ -22,6 +22,7 @@ class FaqController extends Controller
         $page = $request->get('page', 1);
         $perPage = $request->get('perPage', 10);
         $data = $this->service->all(paginate: true, page: $page, dataPerPage: $perPage);
+        // dd($data);
         return view('faq.index', compact('data'));
     }
 
