@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <p>Hello Campaign</p>
+    <p>Hello Backoffice</p>
 @endsection
