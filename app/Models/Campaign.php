@@ -26,4 +26,9 @@ class Campaign extends Model implements HasMedia
     {
         return $this->getFirstMediaUrl('thumbnail');
     }
+
+    public function donation()
+    {
+        return $this->hasMany(Donation::class);
+    }
 }

@@ -26,10 +26,10 @@
                             Nama
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Lokasi
+                            Target
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Tanggal
+                            Progres
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Action
@@ -46,13 +46,29 @@
                                 {{ $item->name }}
                             </td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                {{ $item->location }}
+                                {{ $item->target }}
                             </td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                {{ $item->date }}
+                                0
                             </td>
-                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                
+                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap flex">
+                                <a href=""
+                                    class="text-gray-900 border border-gray-800 font-medium rounded-md text-sm px-5 py-2.5 text-center">
+                                    <box-icon name='detail'></box-icon>
+                                </a>
+                                <a href=""
+                                    class="text-gray-900 border border-gray-800 font-medium rounded-md text-sm px-5 py-2.5 text-center">
+                                    <box-icon name='pencil'></box-icon>
+                                </a>
+                                <form action="{{ route('campaign.destroy', $item->id) }}">
+                                    @method('DELETE')
+                                    @csrf
+                                    <input type="hidden" value="{{ $item->id }}" name="id">
+                                    <button
+                                        class="text-red-900 border border-red-800 font-medium rounded-md text-sm px-5 py-2.5 text-center">
+                                        <box-icon name='trash'></box-icon>
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

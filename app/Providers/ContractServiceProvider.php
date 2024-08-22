@@ -7,11 +7,13 @@ use App\Contract\CampaignContract;
 use App\Contract\DontationContract;
 use App\Contract\EventContract;
 use App\Contract\FaqContract;
+use App\Contract\SettingContract;
 use App\Service\BaseService;
 use App\Service\CampaignService;
 use App\Service\DonationService;
 use App\Service\EventService;
 use App\Service\FaqService;
+use App\Service\SettingService;
 use Illuminate\Support\ServiceProvider;
 
 class ContractServiceProvider extends ServiceProvider
@@ -26,6 +28,7 @@ class ContractServiceProvider extends ServiceProvider
         $this->app->bind(DontationContract::class, DonationService::class);
         $this->app->bind(EventContract::class, EventService::class);
         $this->app->bind(FaqContract::class, FaqService::class);
+        $this->app->bind(SettingContract::class, SettingService::class);
     }
 
     /**
