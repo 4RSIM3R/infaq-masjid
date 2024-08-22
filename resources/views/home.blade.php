@@ -13,12 +13,12 @@
                             aria-hidden="true">&rarr;</span></a>
                 </div>
             </div>
-            <div class="text-center">
+            <div class="text-center flex flex-col items-center">
                 <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Data to enrich your online business
                 </h1>
                 <p class="mt-6 text-lg leading-8 text-gray-300">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
                     qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
-                <div class="mt-10 flex gap-x-6">
+                <div class="mt-10 flex items-center gap-x-6">
                     <a href="#"
                         class="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">Get
                         started</a>
@@ -37,65 +37,80 @@
     <div class="my-16 max-w-screen-xl mx-auto flex flex-col">
         <p class="text-2xl font-bold text-center">Yuk Ber-infaq</p>
         <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            <div class="group relative">
-                <div
-                    class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                    <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg"
-                        alt="Front of men&#039;s Basic Tee in black."
-                        class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+            @foreach ($campaigns as $data)
+                <div class="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white">
+                    <a href="{{ route('home.campaign_detail', $data->id) }}">
+                        <div class="aspect-h-4 aspect-w-3 bg-gray-200 sm:aspect-none group-hover:opacity-75 sm:h-96">
+                            <img src="{{ $data->thumbnail }}"
+                                class="h-full w-full object-cover object-center sm:h-full sm:w-full">
+                        </div>
+                        <div class="flex flex-1 flex-col space-y-2 p-4">
+                            <div>
+                                <h3 class="text-sm font-medium text-gray-900">
+                                    <span aria-hidden="true" class="absolute inset-0"></span>
+                                    {{ $data->name }}
+                                </h3>
+                                <p class="text-sm text-gray-500">{{ $data->description }}</p>
+                            </div>
+                            <div class="flex justify-between">
+                                <p class="text-sm italic text-gray-500">Target</p>
+                                <p class="text-sm font-medium text-gray-900">{{ $data->target }}</p>
+                            </div>
+                            <div class="flex justify-between">
+                                <p class="text-sm italic text-gray-500">Terkumpul</p>
+                                <p class="text-sm font-medium text-gray-900">{{ $data->target }}</p>
+                            </div>
+                            <div class="my-2">
+                                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 45%"></div>
+                                </div>
+                                <p class="text-sm text-right mt-1 text-gray-500">45%</p>
+                            </div>
+                            <button type="button"
+                                class="mt-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700">
+                                Infaq Sekarang
+                            </button>
+                        </div>
+                    </a>
                 </div>
-                <div class="mt-4 flex justify-between">
-                    <div>
-                        <h3 class="text-sm text-gray-700">
-                            <a href="#">
-                                <span aria-hidden="true" class="absolute inset-0"></span>
-                                Basic Tee
-                            </a>
-                        </h3>
-                        <p class="mt-1 text-sm text-gray-500">Black</p>
-                    </div>
-                    <p class="text-sm font-medium text-gray-900">$35</p>
-                </div>
-            </div>
-
-            <!-- More products... -->
+            @endforeach
         </div>
-        <a href="">More</a>
+        <div class="flex justify-center my-4">
+            <a href=""
+                class="mt-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700">
+                Lihat Semua
+            </a>
+        </div>
     </div>
     <div class="my-16 max-w-screen-xl mx-auto flex flex-col">
         <p class="text-2xl font-bold text-center">kegiatan Masjid Darul Ilmi</p>
         <div class="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
             @foreach ($event as $item)
-                <div>
+                <a href="{{ route('home.event_detail', $item->id) }}">
                     <div class="relative">
                         <div class="relative h-72 w-full overflow-hidden rounded-lg">
-                            <img src="https://tailwindui.com/img/ecommerce-images/product-page-03-related-product-01.jpg"
-                                alt="Front of zip tote bag with white canvas, black canvas straps and handle, and black zipper pulls."
-                                class="h-full w-full object-cover object-center">
+                            <img src="{{ $item->thumbnail }}" class="h-full w-full object-cover object-center">
                         </div>
                         <div class="relative mt-4">
-                            <h3 class="text-sm font-medium text-gray-900">Zip Tote Basket</h3>
-                            <p class="mt-1 text-sm text-gray-500">White and black</p>
+                            <h3 class="text-sm font-medium text-gray-900">{{ $item->location }}</h3>
+                            <p class="mt-1 text-sm text-gray-500">{{ $item->description }}</p>
                         </div>
                         <div
                             class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
                             <div aria-hidden="true"
                                 class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"></div>
-                            <p class="relative text-lg font-semibold text-white">$140</p>
+                            <p class="relative text-lg font-semibold text-white">{{ $item->name }}</p>
                         </div>
                     </div>
-                    <div class="mt-6">
-                        <a href="#"
-                            class="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200">Add
-                            to bag<span class="sr-only">, Zip Tote Basket</span></a>
-                    </div>
-                </div>
+                </a>
             @endforeach
-
-
-            <!-- More products... -->
         </div>
-
+        <div class="flex justify-center my-4">
+            <a href=""
+                class="mt-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700">
+                Lihat Semua
+            </a>
+        </div>
     </div>
     <div class="my-16 max-w-screen-xl mx-auto flex flex-col">
         <p class="text-2xl font-bold text-center">Pertanyaan yang sering diajukan</p>
@@ -107,9 +122,7 @@
                         <dd class="mt-2 text-base leading-7 text-gray-600">{{ $item->answer }}</dd>
                     </div>
                 @endforeach
-
             </dl>
-
         </div>
     </div>
 @endsection

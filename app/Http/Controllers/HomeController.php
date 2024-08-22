@@ -43,15 +43,15 @@ class HomeController extends Controller
 
     public function event_detail($id)
     {
-        $campaign = $this->event->findById($id);
+        $event = $this->event->findById($id);
         return view('home.event_detail', compact('event'));
     }
 
     public function campaign(Request $request)
     {
         $page = $request->get('page');
-        $events = $this->campaign->all(paginate: true, page: $page);
-        return view('home.campaign', compact('events'));
+        $campaigns = $this->campaign->all(paginate: true, page: $page);
+        return view('home.campaign', compact('campaigns'));
     }
 
     public function campaign_detail($id)

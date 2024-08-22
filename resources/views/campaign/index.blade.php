@@ -10,7 +10,7 @@
 
             <a href="{{ route('campaign.create') }}"
                 class="flex items-center py-2.5 px-5 text-sm font-medium focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 focus:z-10">
-                <box-icon class="h-4 w-4 mr-2" name='plus'></box-icon>
+                <box-icon class="h-5 w-5 mr-2" name='plus'></box-icon>
                 Tambah Campaign
             </a>
         </div>
@@ -51,22 +51,22 @@
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                 0
                             </td>
-                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap flex">
-                                <a href=""
-                                    class="text-gray-900 border border-gray-800 font-medium rounded-md text-sm px-5 py-2.5 text-center">
-                                    <box-icon name='detail'></box-icon>
+                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap flex space-x-2 items-center">
+                                <a href="{{ route('campaign.show', $item->id) }}"
+                                    class="text-gray-900 border border-gray-800 font-medium rounded-md text-sm p-2 text-center flex items-center justify-center">
+                                    <box-icon name='detail' class="h-5 w-5"></box-icon>
                                 </a>
-                                <a href=""
-                                    class="text-gray-900 border border-gray-800 font-medium rounded-md text-sm px-5 py-2.5 text-center">
-                                    <box-icon name='pencil'></box-icon>
+                                <a href="{{ route('campaign.edit', $item->id) }}"
+                                    class="text-gray-900 border border-gray-800 font-medium rounded-md text-sm p-2 text-center flex items-center justify-center">
+                                    <box-icon name='pencil' class="h-5 w-5"></box-icon>
                                 </a>
-                                <form action="{{ route('campaign.destroy', $item->id) }}">
-                                    @method('DELETE')
-                                    @csrf
-                                    <input type="hidden" value="{{ $item->id }}" name="id">
+                                <form action="{{ route('campaign.destroy', $item->id) }}" method="POST">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <input type="hidden" name="id" value="{{ $item->id }}">
                                     <button
-                                        class="text-red-900 border border-red-800 font-medium rounded-md text-sm px-5 py-2.5 text-center">
-                                        <box-icon name='trash'></box-icon>
+                                        class="text-red-900 border border-red-800 font-medium rounded-md text-sm p-2 text-center flex items-center justify-center">
+                                        <box-icon name='trash' class="h-5 w-5 text-red-700"></box-icon>
                                     </button>
                                 </form>
                             </td>

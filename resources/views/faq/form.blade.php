@@ -19,12 +19,10 @@
         @endif
 
         @csrf
-
         <div class="mb-5">
             <label for="question" class="block mb-2 text-sm font-medium text-gray-900">Pertanyaan </label>
             <input type="text" id="question" name="question"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
-                placeholder="Masukkan pertanyaan" />
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md  block w-full p-2.5" />
             @error('question')
                 <div class="mt-2">
                     <div class="text-sm text-red-600">
@@ -37,8 +35,7 @@
         <div class="mb-5">
             <label for="answer" class="block mb-2 text-sm font-medium text-gray-900">Jawaban </label>
             <textarea name="answer" id="answer"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
-                placeholder="Masukkan jawaban"></textarea>
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md  block w-full p-2.5"></textarea>
             @error('answer')
                 <div class="mt-2">
                     <div class="text-sm text-red-600">
