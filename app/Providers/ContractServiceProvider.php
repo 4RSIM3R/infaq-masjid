@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use App\Contract\BaseContract;
 use App\Contract\CampaignContract;
-use App\Contract\DontationContract;
+use App\Contract\DonationContract;
 use App\Contract\EventContract;
 use App\Contract\FaqContract;
 use App\Contract\SettingContract;
@@ -25,7 +25,7 @@ class ContractServiceProvider extends ServiceProvider
     {
         $this->app->bind(BaseContract::class, BaseService::class);
         $this->app->bind(CampaignContract::class, CampaignService::class);
-        $this->app->bind(DontationContract::class, DonationService::class);
+        $this->app->bind(DonationContract::class, DonationService::class);
         $this->app->bind(EventContract::class, EventService::class);
         $this->app->bind(FaqContract::class, FaqService::class);
         $this->app->bind(SettingContract::class, SettingService::class);
