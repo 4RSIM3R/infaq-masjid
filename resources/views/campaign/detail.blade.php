@@ -4,8 +4,8 @@
     <div>
         <div class="flex justify-between items-center">
             <div>
-                <h1 class="text-xl font-semibold">Campaign</h1>
-                <p class="text-sm text-gray-400 mt-1">{{ $data->name }}</p>
+                <h1 class="text-xl font-semibold">Campaign - {{ $data->name }}</h1>
+                <p class="text-sm text-gray-400 mt-1">Detail report of campaign</p>
             </div>
             <div>
                 <p class="text-base">Target - {{ $data->target }}</p>
@@ -28,41 +28,28 @@
                         <th scope="col" class="px-6 py-3">
                             Nominal
                         </th>
+                        <th scope="col" class="px-6 py-3">
+                            Status
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($data['items'] as $item)
+                    @foreach ($data['donation'] as $item)
                         <tr class="bg-white border-b ">
                             <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                 {{ $item->id }}
                             </th>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                {{ $item->name }}
+                                {{ $item->donatur }}
                             </td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                {{ $item->target }}
+                                {{ $item->phone_number }}
                             </td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                0
+                                {{ $item->amount }}
                             </td>
-                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap flex space-x-2 items-center">
-                                <a href="{{ route('campaign.show', $item->id) }}"
-                                    class="text-gray-900 border border-gray-800 font-medium rounded-md text-sm p-2 text-center flex items-center justify-center">
-                                    <box-icon name='detail' class="h-5 w-5"></box-icon>
-                                </a>
-                                <a href="{{ route('campaign.edit', $item->id) }}"
-                                    class="text-gray-900 border border-gray-800 font-medium rounded-md text-sm p-2 text-center flex items-center justify-center">
-                                    <box-icon name='pencil' class="h-5 w-5"></box-icon>
-                                </a>
-                                <form action="{{ route('campaign.destroy', $item->id) }}" method="POST">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    <input type="hidden" name="id" value="{{ $item->id }}">
-                                    <button
-                                        class="text-red-900 border border-red-800 font-medium rounded-md text-sm p-2 text-center flex items-center justify-center">
-                                        <box-icon name='trash' class="h-5 w-5 text-red-700"></box-icon>
-                                    </button>
-                                </form>
+                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                {{ $item->status }}
                             </td>
                         </tr>
                     @endforeach
