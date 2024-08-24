@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Contract\CampaignContract;
 use App\Contract\EventContract;
+use App\Http\Requests\DonationRequest;
 use App\Models\Campaign;
+use App\Models\Donation;
 use App\Models\Event;
 use App\Models\Faq;
+use Exception;
 use Illuminate\Http\Request;
+use Midtrans\Snap;
+use Ramsey\Uuid\Uuid;
 
 class HomeController extends Controller
 {
@@ -58,5 +63,42 @@ class HomeController extends Controller
     {
         $campaign = $this->campaign->findById($id);
         return view('home.campaign_detail', compact('campaign'));
+    }
+
+    public function donation($id, DonationRequest $request)
+    {
+        $campaign = $this->campaign->findById($id);
+        \Midtrans\Config::$serverKey = env('SERVER_KEY');
+
+        try {
+            $payload = $request->validated();
+            $payload['unique_id'] = Uuid::uuid7()->toString();
+            $payload['method'] = 'MIDTRANS';
+            $donation = Donation::create($payload);
+
+            $params = [
+                'transaction_details' => [
+                    'order_id' => $payload['unique_id'],
+                    'gross_amount' => $payload['amount'],
+                ],
+                'customer_details' => [
+                    'first_name'    => $payload['donatur'],
+                    'phone'         => $payload['phone_number'],
+                ],
+                'item_details' => [
+                    [
+                        'id' => $payload['unique_id'],
+                        'price' => $payload['amount'],
+                        'quantity' => 1,
+                        'name' => $campaign->name
+                    ]
+                ],
+            ];
+
+            $url = Snap::createTransaction($params)->redirect_url;
+            return redirect($url);
+        } catch (Exception $e) {
+            return redirect()->back()->withErrors($e->getMessage());
+        }
     }
 }

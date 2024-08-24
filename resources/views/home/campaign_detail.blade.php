@@ -18,40 +18,50 @@
             <h1 class="text-2xl font-bold text-center">{{ $campaign->name }}</h1>
             <p class="text-sm text-gray-400 mt-1">{{ $campaign->description }}</p>
         </div>
-        <form action="" method="POST">
+        <form action="{{ route('home.donation', $campaign->id) }}" method="POST">
+            @if ($errors->any())
+                <div class="mb-5">
+                    @foreach ($errors->all() as $error)
+                        <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50" role="alert">
+                            {{ $error }}
+                        </div>
+                    @endforeach
+                </div>
+            @endif
             @csrf
+            <input type="hidden" name="campaign_id" value="{{ $campaign->id }}">
             <div class="mb-5">
-                <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Nama</label>
-                <input type="text" id="name" name="name" value="Hamba Allah"
+                <label for="donatur" class="block mb-2 text-sm font-medium text-gray-900">Nama</label>
+                <input type="text" id="donatur" name="donatur" value="Hamba Allah"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md  block w-full p-2.5" />
-                @error('name')
+                @error('donatur')
                     <div class="mt-2">
                         <div class="text-sm text-red-600">
-                            {{ $errors->first('name') }}
+                            {{ $errors->first('donatur') }}
                         </div>
                     </div>
                 @enderror
             </div>
             <div class="mb-5">
-                <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">No. Hp</label>
-                <input type="tel" id="phone" name="phone"
+                <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-900">No. Hp</label>
+                <input type="tel" id="phone_number" name="phone_number"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md  block w-full p-2.5" />
-                @error('phone')
+                @error('phone_number')
                     <div class="mt-2">
                         <div class="text-sm text-red-600">
-                            {{ $errors->first('phone') }}
+                            {{ $errors->first('phone_number') }}
                         </div>
                     </div>
                 @enderror
             </div>
             <div class="mb-5">
-                <label for="nominal" class="block mb-2 text-sm font-medium text-gray-900">Nominal</label>
-                <input type="number" inputmode="numeric" min="0" id="nominal" name="nominal"
+                <label for="amount" class="block mb-2 text-sm font-medium text-gray-900">Nominal</label>
+                <input type="number" inputmode="numeric" min="0" id="amount" name="amount"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md  block w-full p-2.5" />
-                @error('nominal')
+                @error('amount')
                     <div class="mt-2">
                         <div class="text-sm text-red-600">
-                            {{ $errors->first('nominal') }}
+                            {{ $errors->first('amount') }}
                         </div>
                     </div>
                 @enderror
