@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Contract\DonationContract;
-use App\Http\Requests\DonationRequest;
+use App\Models\Donation;
 use Illuminate\Http\Request;
 
 class DonationController extends Controller
@@ -15,54 +15,36 @@ class DonationController extends Controller
         $this->service = $service;
     }
 
-    public function index(Request $request)
+    public function store(Request $request)
     {
-        //
-    }
+        \Midtrans\Config::$serverKey = env('SERVER_KEY');
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+        $serverKey = env('SERVER_KEY');
+        $hashedKey = hash('sha512', $request->order_id . $request->status_code . $request->gross_amount . $serverKey);
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(DonationRequest $request)
-    {
-        //
-    }
+        if ($hashedKey !== $request->signature_key) {
+            return response()->json(['message' => 'Invalid signature key'], 403);
+        }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show($id)
-    {
-        //
-    }
+        $donation = Donation::query()->where('unique_id', $request->order_id)->first();
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit($id)
-    {
-        //
-    }
+        if (!$donation) {
+            return response()->json(['message' => 'Invalid order id'], 403);
+        }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request,  $id)
-    {
-        //
-    }
+        switch ($request->transaction_status) {
+            case 'settlement':
+                Donation::query()->where('unique_id', $request->order_id)->update([
+                    'status' => 'paid',
+                ]);
+                break;
+            case 'pending':
+                Donation::query()->where('unique_id', $request->order_id)->update([
+                    'status' => 'pending',
+                ]);
+                break;
+        }
 
-
-    public function destroy($id)
-    {
-        //
+        return response()->json(['message' => 'Success']);
     }
 }
