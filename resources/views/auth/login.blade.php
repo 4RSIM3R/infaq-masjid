@@ -23,14 +23,12 @@
 
     <div class="h-screen mx-auto w-full max-w-sm lg:w-96 p-4 flex flex-col justify-center">
         <div class="flex flex-col justify-center items-center">
-            <img class="h-24 w-24"
-                src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Lambang_Kabupaten_Sumedang.png"
-                alt="Your Company">
+            <img class="h-24 w-24" src="blue.png">
             <h2 class="mt-8 text-xl font-bold leading-9 tracking-tight text-gray-900 text-center">
-                SIKERJA DINKES SUMEDANG
+                BerInfaq Console
             </h2>
             <p class="mt-1 text-sm leading-6 text-gray-500 text-center">
-                deskripsi disini
+                Yuk, Mari Kita Bangun Kebersamaan dan Keberkahan!
             </p>
         </div>
 

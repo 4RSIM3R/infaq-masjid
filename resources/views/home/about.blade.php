@@ -3,8 +3,8 @@
 @section('content')
     <main class="isolate">
         <!-- Hero section -->
-        <div class="relative isolate -z-10 overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
-            <div class="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96"
+        <div class="relative isolate -z-10 overflow-hidden bg-gradient-to-b from-teal-100/20 pt-14">
+            <div class="absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-teal-600/10 ring-1 ring-teal-50 sm:-mr-80 lg:-mr-96"
                 aria-hidden="true"></div>
             <div class="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
                 <div
@@ -30,7 +30,7 @@
         <div class="mx-auto -mt-8 max-w-7xl px-6 lg:px-8">
             <div class="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4">
                 <div>
-                    <time datetime="2021-08" class="flex items-center text-sm font-semibold leading-6 text-indigo-600">
+                    <time datetime="2021-08" class="flex items-center text-sm font-semibold leading-6 text-teal-600">
                         <svg viewBox="0 0 4 4" class="mr-4 h-1 w-1 flex-none" aria-hidden="true">
                             <circle cx="2" cy="2" r="2" fill="currentColor" />
                         </svg>
@@ -43,7 +43,7 @@
                         Aspernatur asperiores et dolorem dolorem optio voluptate repudiandae.</p>
                 </div>
                 <div>
-                    <time datetime="2021-12" class="flex items-center text-sm font-semibold leading-6 text-indigo-600">
+                    <time datetime="2021-12" class="flex items-center text-sm font-semibold leading-6 text-teal-600">
                         <svg viewBox="0 0 4 4" class="mr-4 h-1 w-1 flex-none" aria-hidden="true">
                             <circle cx="2" cy="2" r="2" fill="currentColor" />
                         </svg>
@@ -56,7 +56,7 @@
                         aspernatur. Cumque minima impedit sapiente a architecto nihil.</p>
                 </div>
                 <div>
-                    <time datetime="2022-02" class="flex items-center text-sm font-semibold leading-6 text-indigo-600">
+                    <time datetime="2022-02" class="flex items-center text-sm font-semibold leading-6 text-teal-600">
                         <svg viewBox="0 0 4 4" class="mr-4 h-1 w-1 flex-none" aria-hidden="true">
                             <circle cx="2" cy="2" r="2" fill="currentColor" />
                         </svg>
@@ -69,7 +69,7 @@
                         aliquid. Consequatur ut officiis earum eum quia facilis. Hic deleniti dolorem quia et.</p>
                 </div>
                 <div>
-                    <time datetime="2022-12" class="flex items-center text-sm font-semibold leading-6 text-indigo-600">
+                    <time datetime="2022-12" class="flex items-center text-sm font-semibold leading-6 text-teal-600">
                         <svg viewBox="0 0 4 4" class="mr-4 h-1 w-1 flex-none" aria-hidden="true">
                             <circle cx="2" cy="2" r="2" fill="currentColor" />
                         </svg>
@@ -193,11 +193,11 @@
                     </div>
                 </div>
                 <div
-                    class="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-indigo-600 p-8 sm:w-11/12 sm:max-w-xl sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-none lg:flex-auto lg:flex-col lg:items-start lg:gap-y-28">
+                    class="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-teal-600 p-8 sm:w-11/12 sm:max-w-xl sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-none lg:flex-auto lg:flex-col lg:items-start lg:gap-y-28">
                     <p class="flex-none text-3xl font-bold tracking-tight text-white">401,093</p>
                     <div class="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
                         <p class="text-lg font-semibold tracking-tight text-white">Transactions this year</p>
-                        <p class="mt-2 text-base leading-7 text-indigo-200">Eu duis porta aliquam ornare. Elementum eget
+                        <p class="mt-2 text-base leading-7 text-teal-200">Eu duis porta aliquam ornare. Elementum eget
                             magna egestas. Eu duis porta aliquam ornare.</p>
                     </div>
                 </div>
@@ -298,7 +298,7 @@
                     </ul>
                     <div class="mt-8 flex border-t border-gray-100 pt-8">
                         <a href="#"
-                            class="text-sm font-semibold leading-6 text-indigo-600 hover:text-indigo-500">View all openings
+                            class="text-sm font-semibold leading-6 text-teal-600 hover:text-teal-500">View all openings
                             <span aria-hidden="true">&rarr;</span></a>
                     </div>
                 </div>

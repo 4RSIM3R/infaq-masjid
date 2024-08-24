@@ -17,16 +17,15 @@
 <body class="bg-white w-full overflow-auto">
 
     <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
             <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo">
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                <img src="blue.png" class="h-12 object-cover">
             </a>
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                <button type="button"
-                    class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2 text-center hidden sm:flex">
+                <a href="{{ route('home.campaign') }}"
+                    class="text-white bg-teal-700 hover:bg-teal-800 font-medium rounded-lg text-sm px-4 py-2 text-center hidden sm:flex">
                     Donasi Sekarang
-                </button>
+                </a>
                 <button data-collapse-toggle="navbar-sticky" type="button"
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100"
                     aria-controls="navbar-sticky" aria-expanded="false">
@@ -43,21 +42,21 @@
                     class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                     <li>
                         <a href="{{ route('home.index') }}"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-700 md:p-0">
                             Beranda
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('home.campaign') }}"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Infaq</a>
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-700 md:p-0 ">Infaq</a>
                     </li>
                     <li>
                         <a href="{{ route('home.event') }}"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Kegiatan</a>
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-700 md:p-0 ">Kegiatan</a>
                     </li>
                     <li>
                         <a href="{{ route('home.about') }}"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Tentang
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-700 md:p-0 ">Tentang
                             Kami</a>
                     </li>
                 </ul>
@@ -74,10 +73,11 @@
         <div class="mx-auto max-w-screen-xl pb-8 pt-16 sm:pt-24 lg:pt-32">
             <div class="xl:grid xl:grid-cols-3 xl:gap-8">
                 <div class="space-y-8">
-                    <img class="h-7" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                        alt="Company name">
-                    <p class="text-sm leading-6 text-gray-600">Making the world a better place through constructing
-                        elegant hierarchies.</p>
+                    <img class="h-12" src="blue.png">
+                    <p class="text-sm leading-6 text-gray-600">
+                        Making the world a better place through constructing
+                        elegant hierarchies.
+                    </p>
                     <div class="flex space-x-6">
                         <a href="#" class="text-gray-400 hover:text-gray-500">
                             <span class="sr-only">Facebook</span>

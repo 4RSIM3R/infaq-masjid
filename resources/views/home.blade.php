@@ -8,22 +8,22 @@
             <div class="hidden sm:mb-8 sm:flex sm:justify-center">
                 <div
                     class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
-                    Announcing our next round of funding. <a href="#" class="font-semibold text-white"><span
-                            class="absolute inset-0" aria-hidden="true"></span>Read more <span
-                            aria-hidden="true">&rarr;</span></a>
+                    Yuk, Mari Kita Bangun Kebersamaan dan Keberkahan!
                 </div>
             </div>
             <div class="text-center flex flex-col items-center">
-                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Data to enrich your online business
+                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+                    BerInfaq
                 </h1>
-                <p class="mt-6 text-lg leading-8 text-gray-300">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
-                    qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
+                <p class="mt-6 text-lg leading-8 text-gray-300">
+                    Berinfaq ke masjid bukan hanya berbagi harta, tapi juga berbagi pahala yang tak terputus. Jadilah bagian
+                    dari cahaya yang menerangi rumah Allah, donasikan hartamu untuk kebaikan yang abadi.
+                </p>
                 <div class="mt-10 flex items-center gap-x-6">
-                    <a href="#"
-                        class="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">Get
-                        started</a>
-                    <a href="#" class="text-sm font-semibold leading-6 text-white">Learn more <span
-                            aria-hidden="true">→</span></a>
+                    <a href="{{ route('home.campaign') }}"
+                        class="rounded-md bg-teal-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm">
+                        Infaq Sekarang
+                    </a>
                 </div>
             </div>
         </div>
@@ -62,12 +62,12 @@
                             </div>
                             <div class="my-2">
                                 <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 45%"></div>
+                                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 45%"></div>
                                 </div>
                                 <p class="text-sm text-right mt-1 text-gray-500">45%</p>
                             </div>
                             <button type="button"
-                                class="mt-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700">
+                                class="mt-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-teal-700">
                                 Infaq Sekarang
                             </button>
                         </div>
@@ -76,8 +76,8 @@
             @endforeach
         </div>
         <div class="flex justify-center my-4">
-            <a href=""
-                class="mt-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700">
+            <a href="{{ route('home.campaign') }}"
+                class="mt-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-teal-700">
                 Lihat Semua
             </a>
         </div>
@@ -92,7 +92,7 @@
                             <img src="{{ $item->thumbnail }}" class="h-full w-full object-cover object-center">
                         </div>
                         <div class="relative mt-4">
-                            <h3 class="text-sm font-medium text-gray-900">{{ $item->location }}</h3>
+                            <h3 class="text-sm font-medium text-gray-900">{{ $item->location }} - {{ Carbon\Carbon::parse($item->date)->format('d M Y') }}</h3>
                             <p class="mt-1 text-sm text-gray-500">{{ $item->description }}</p>
                         </div>
                         <div
@@ -106,8 +106,8 @@
             @endforeach
         </div>
         <div class="flex justify-center my-4">
-            <a href=""
-                class="mt-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700">
+            <a href="{{ route('home.event') }}"
+                class="mt-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-teal-700">
                 Lihat Semua
             </a>
         </div>
