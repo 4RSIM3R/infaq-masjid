@@ -29,6 +29,9 @@
                             Target
                         </th>
                         <th scope="col" class="px-6 py-3">
+                            Donation
+                        </th>
+                        <th scope="col" class="px-6 py-3">
                             Progres
                         </th>
                         <th scope="col" class="px-6 py-3">
@@ -49,7 +52,10 @@
                                 {{ $item->target }}
                             </td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                0
+                                {{ $item->total_donations_paid }}
+                            </td>
+                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                {{ $item->progress_percentage }}%
                             </td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap flex space-x-2 items-center">
                                 <a href="{{ route('campaign.show', $item->id) }}"

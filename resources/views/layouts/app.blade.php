@@ -52,7 +52,7 @@
                         <span class="sr-only">Toggle sidebar</span>
                     </button>
                     <a href="https://flowbite.com" class="flex items-center justify-between mr-4 w-56">
-                        <img src="blue.png" class="mr-3 w-8 h-8" alt="Flowbite Logo" />
+                        <img src="{{ asset('blue.png') }}" class="mr-3 w-8 h-8" alt="Flowbite Logo" />
                     </a>
                     <form action="#" method="GET" class="hidden md:block md:pl-2">
                         <label for="topbar-search" class="sr-only">Search</label>

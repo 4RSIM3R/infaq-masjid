@@ -76,12 +76,12 @@
         <div class="mb-5">
             <label class="block mb-2 text-sm font-medium text-gray-900" for="thumbnail">Upload file</label>
             <input
-                class="block w-full text-sm text-green-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
+                class="block w-full text-sm text-teal-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
                 id="thumbnail" name="thumbnail" type="file" accept="image/*">
         </div>
 
         <button type="submit"
-            class="text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
+            class="text-white bg-teal-700 hover:bg-teal-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
             Submit
         </button>
 

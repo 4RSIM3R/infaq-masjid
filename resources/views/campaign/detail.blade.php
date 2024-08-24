@@ -34,7 +34,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($data['donation'] as $item)
+                    @foreach ($data['donations'] as $item)
                         <tr class="bg-white border-b ">
                             <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                 {{ $item->id }}

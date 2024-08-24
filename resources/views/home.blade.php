@@ -2,12 +2,12 @@
 
 @section('content')
     <div class="relative isolate overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
+        <img src="{{ asset('masjid.jpg') }}"
             alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
         <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
             <div class="hidden sm:mb-8 sm:flex sm:justify-center">
                 <div
-                    class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
+                    class="relative rounded-full px-3 py-1 text-sm leading-6 text-white ring-1 ring-white/10 hover:ring-white/20">
                     Yuk, Mari Kita Bangun Kebersamaan dan Keberkahan!
                 </div>
             </div>
@@ -15,7 +15,7 @@
                 <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">
                     BerInfaq
                 </h1>
-                <p class="mt-6 text-lg leading-8 text-gray-300">
+                <p class="mt-6 text-lg leading-8 text-white">
                     Berinfaq ke masjid bukan hanya berbagi harta, tapi juga berbagi pahala yang tak terputus. Jadilah bagian
                     dari cahaya yang menerangi rumah Allah, donasikan hartamu untuk kebaikan yang abadi.
                 </p>
@@ -58,13 +58,14 @@
                             </div>
                             <div class="flex justify-between">
                                 <p class="text-sm italic text-gray-500">Terkumpul</p>
-                                <p class="text-sm font-medium text-gray-900">{{ $data->target }}</p>
+                                <p class="text-sm font-medium text-gray-900">{{ $data->total_donations_paid }}</p>
                             </div>
                             <div class="my-2">
                                 <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                    <div class="bg-teal-600 h-2.5 rounded-full" style="width: 45%"></div>
+                                    <div class="bg-teal-600 h-2.5 rounded-full"
+                                        style="width: {{ $data->progress_percentage }}%"></div>
                                 </div>
-                                <p class="text-sm text-right mt-1 text-gray-500">45%</p>
+                                <p class="text-sm text-right mt-1 text-gray-500">{{ $data->progress_percentage }}%</p>
                             </div>
                             <button type="button"
                                 class="mt-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-teal-700">
@@ -92,7 +93,8 @@
                             <img src="{{ $item->thumbnail }}" class="h-full w-full object-cover object-center">
                         </div>
                         <div class="relative mt-4">
-                            <h3 class="text-sm font-medium text-gray-900">{{ $item->location }} - {{ Carbon\Carbon::parse($item->date)->format('d M Y') }}</h3>
+                            <h3 class="text-sm font-medium text-gray-900">{{ $item->location }} -
+                                {{ Carbon\Carbon::parse($item->date)->format('d M Y') }}</h3>
                             <p class="mt-1 text-sm text-gray-500">{{ $item->description }}</p>
                         </div>
                         <div

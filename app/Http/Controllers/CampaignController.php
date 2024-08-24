@@ -49,7 +49,7 @@ class CampaignController extends Controller
 
     public function show($id)
     {
-        $data = $this->service->findById($id, relations: ['donation']);
+        $data = $this->service->findById($id, relations: ['donations']);
         return view('campaign.detail', compact('data'));
     }
 

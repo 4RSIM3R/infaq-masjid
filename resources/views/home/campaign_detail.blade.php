@@ -67,7 +67,7 @@
                 @enderror
             </div>
             <button type="submit"
-                class="text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
+                class="text-white bg-teal-700 hover:bg-teal-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
                 Submit
             </button>
         </form>
