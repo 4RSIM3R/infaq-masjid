@@ -60,7 +60,7 @@
                 <th>Nama Campaign</th>
                 <td>{{ $data->name }}</td>
                 <th>Total Donasi</th>
-                <td>{{ $data->total_donations_paid }}</td>
+                <td>{{ number_format($data->total_donations_paid) }}</td>
             </tr>
             <tr>
                 <th>Deathline</th>
@@ -81,7 +81,7 @@
             @foreach ($data->donations as $donation)
                 <tr>
                     <td>{{ $donation->name }}</td>
-                    <td>{{ $donation->amount }}</td>
+                    <td>{{ number_format($donation->amount) }}</td>
                     <td>{{ $donation->status }}</td>
                 </tr>
             @endforeach
