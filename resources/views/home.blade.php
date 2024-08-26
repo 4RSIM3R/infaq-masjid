@@ -54,7 +54,7 @@
                             </div>
                             <div class="flex justify-between">
                                 <p class="text-sm italic text-gray-500">Target</p>
-                                <p class="text-sm font-medium text-gray-900">{{ $data->target }}</p>
+                                <p class="text-sm font-medium text-gray-900">{{ number_format($data->target) }}</p>
                             </div>
                             <div class="flex justify-between">
                                 <p class="text-sm italic text-gray-500">Terkumpul</p>

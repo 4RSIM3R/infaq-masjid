@@ -19,7 +19,7 @@
                                         <span aria-hidden="true" class="absolute inset-0"></span>
                                         {{ $data->name }}
                                     </h3>
-                                    <p class="text-sm text-gray-500">{{ $data->description }}</p>
+                                    <p class="text-sm text-gray-500">{{ \Illuminate\Support\Str::limit($data->description, 50) }}</p>
                                 </div>
                                 <div class="flex justify-between">
                                     <p class="text-sm italic text-gray-500">Target</p>

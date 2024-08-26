@@ -66,7 +66,7 @@
                 <th>Deathline</th>
                 <td>{{ $data->end_date }}</td>
                 <th>Target</th>
-                <td>{{ $data->target }}</td>
+                <td>{{ number_format($data->target) }}</td>
             </tr>
         </table>
     </div>
