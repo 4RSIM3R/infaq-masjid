@@ -19,7 +19,7 @@
     <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
             <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="{{ asset('blue.png') }}" class="h-12 object-cover">
+                <img src="{{ asset('white.png') }}" class="h-16 object-cover">
             </a>
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                 <a href="{{ route('home.campaign') }}"
@@ -73,7 +73,7 @@
         <div class="mx-auto max-w-screen-xl pb-8 pt-16 sm:pt-24 lg:pt-32">
             <div class="xl:grid xl:grid-cols-3 xl:gap-8">
                 <div class="space-y-8">
-                    <img class="h-12" src="{{ asset('blue.png') }}">
+                    <img class="h-14" src="{{ asset('white.png') }}">
                     <p class="text-sm leading-6 text-gray-600">
                         Making the world a better place through constructing
                         elegant hierarchies.

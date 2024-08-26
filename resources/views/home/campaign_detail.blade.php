@@ -1,17 +1,11 @@
 @extends('layouts.guest')
 
 @section('content')
-    <div class="relative isolate my-16"></div>
+    <div class="relative isolate my-24"></div>
     <div class=" max-w-screen-xl mx-auto mt-20">
         <div class="flex items-start space-x-4">
-            <div class="mx-auto max-w-screen-lg">
+            <div class="max-w-screen-lg">
                 <img src="{{ $campaign->thumbnail }}" class="w-full border border-gray-200 h-auto rounded-lg">
-            </div>
-            <div class="flex flex-col items-start justify-start my-8 h-auto">
-                <p class="text-lg font-bold text-center">{{ $campaign->name }}</p>
-                <p class="text-base text-gray-400 mt-1">{{ $campaign->description }}</p>
-                <p class="text-lg font-bold text-center mt-2">Terkumpul</p>
-                <p class="text-base text-gray-400 mt-1">{{ $campaign->target }}</p>
             </div>
         </div>
         <div class="flex flex-col space-y-4 items-start my-8">
