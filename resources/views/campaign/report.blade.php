@@ -80,7 +80,7 @@
             </tr>
             @foreach ($data->donations as $donation)
                 <tr>
-                    <td>{{ $donation->name }}</td>
+                    <td>{{ $donation->donatur }}</td>
                     <td>{{ number_format($donation->amount) }}</td>
                     <td>{{ $donation->status }}</td>
                 </tr>
