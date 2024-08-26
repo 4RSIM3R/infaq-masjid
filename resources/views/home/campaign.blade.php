@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="bg-white">
-        <div class="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-7xl">
+        <div class="mx-auto max-w-2xl py-16 lg:max-w-7xl">
             <h2 class="text-xl font-bold text-gray-900">List campaign donation</h2>
 
             <div class="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
@@ -23,17 +23,19 @@
                                 </div>
                                 <div class="flex justify-between">
                                     <p class="text-sm italic text-gray-500">Target</p>
-                                    <p class="text-sm font-medium text-gray-900">{{ $data->target }}</p>
+                                    <p class="text-sm font-medium text-gray-900">{{ number_format($data->target) }}</p>
                                 </div>
                                 <div class="flex justify-between">
                                     <p class="text-sm italic text-gray-500">Terkumpul</p>
-                                    <p class="text-sm font-medium text-gray-900">{{ $data->target }}</p>
+                                    <p class="text-sm font-medium text-gray-900">
+                                        {{ number_format($data->total_donations_paid) }}</p>
                                 </div>
                                 <div class="my-2">
                                     <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                        <div class="bg-teal-600 h-2.5 rounded-full" style="width: 45%"></div>
+                                        <div class="bg-teal-600 h-2.5 rounded-full"
+                                            style="width: {{ $data->progress_percentage }}%"></div>
                                     </div>
-                                    <p class="text-sm text-right mt-1 text-gray-500">45%</p>
+                                    <p class="text-sm text-right mt-1 text-gray-500">{{ $data->progress_percentage }}%</p>
                                 </div>
                                 <button type="button"
                                     class="mt-2 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-teal-700">

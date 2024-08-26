@@ -4,7 +4,7 @@
     <div class="relative isolate my-16"></div>
     <div class=" max-w-screen-xl mx-auto mt-20">
         <div class="flex items-start space-x-4">
-            <div class="max-w-screen-lg">
+            <div class="mx-auto max-w-screen-lg">
                 <img src="{{ $campaign->thumbnail }}" class="w-full border border-gray-200 h-auto rounded-lg">
             </div>
             <div class="flex flex-col items-start justify-start my-8 h-auto">

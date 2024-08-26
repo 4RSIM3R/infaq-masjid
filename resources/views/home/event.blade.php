@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="bg-white">
-        <div class="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-7xl">
+        <div class="mx-auto max-w-2xl py-16 lg:max-w-7xl">
             <h2 class="text-xl font-bold text-gray-900">Kegiatan Masjid</h2>
 
             <div class="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">

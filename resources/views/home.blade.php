@@ -49,7 +49,8 @@
                                     <span aria-hidden="true" class="absolute inset-0"></span>
                                     {{ $data->name }}
                                 </h3>
-                                <p class="text-sm text-gray-500">{{ $data->description }}</p>
+                                <p class="text-sm text-gray-500">
+                                    {{ \Illuminate\Support\Str::limit($data->description, 50) }}</p>
                             </div>
                             <div class="flex justify-between">
                                 <p class="text-sm italic text-gray-500">Target</p>
@@ -57,7 +58,8 @@
                             </div>
                             <div class="flex justify-between">
                                 <p class="text-sm italic text-gray-500">Terkumpul</p>
-                                <p class="text-sm font-medium text-gray-900">{{ $data->total_donations_paid }}</p>
+                                <p class="text-sm font-medium text-gray-900">
+                                    {{ number_format($data->total_donations_paid) }}</p>
                             </div>
                             <div class="my-2">
                                 <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
@@ -94,7 +96,8 @@
                         <div class="relative mt-4">
                             <h3 class="text-sm font-medium text-gray-900">{{ $item->location }} -
                                 {{ Carbon\Carbon::parse($item->date)->format('d M Y') }}</h3>
-                            <p class="mt-1 text-sm text-gray-500">{{ $item->description }}</p>
+                            <p class="mt-1 text-sm text-gray-500">
+                                {{ \Illuminate\Support\Str::limit($item->description, 50) }}</p>
                         </div>
                         <div
                             class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
