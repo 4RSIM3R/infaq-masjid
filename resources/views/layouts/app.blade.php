@@ -52,7 +52,7 @@
                         <span class="sr-only">Toggle sidebar</span>
                     </button>
                     <a href="https://flowbite.com" class="flex items-center justify-between mr-4 w-56">
-                        <img src="{{ asset('white.png') }}" class="mr-3 w-8 h-8" alt="Flowbite Logo" />
+                        <img src="{{ asset('white.png') }}" class="mr-3 w-12 h-12"  />
                     </a>
                     <form action="#" method="GET" class="hidden md:block md:pl-2">
                         <label for="topbar-search" class="sr-only">Search</label>
@@ -91,7 +91,7 @@
                         </div>
                         <ul class="py-1 text-gray-700 dark:text-gray-300" aria-labelledby="dropdown">
                             <li>
-                                <a href="#"
+                                <a href="{{ route('logout') }}"
                                     class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                     Sign out
                                 </a>
