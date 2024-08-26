@@ -56,7 +56,7 @@ class FaqController extends Controller
     {
         $payload = $request->validated();
 
-        $result = $this->service->update($payload, $id);
+        $result = $this->service->update($id, $payload);
 
         if ($result instanceof Exception) {
             return redirect()->back()->withErrors($result->getMessage());

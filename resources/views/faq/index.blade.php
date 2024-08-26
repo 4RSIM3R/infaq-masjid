@@ -42,17 +42,10 @@
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                 {{ $item->question }}
                             </td>
-                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                {{ $item->answer }}
-                            </td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap flex space-x-2 items-center">
                                 <a href="{{ route('faq.show', $item->id) }}"
                                     class="text-gray-900 border border-gray-800 font-medium rounded-md text-sm p-2 text-center flex items-center justify-center">
                                     <box-icon name='detail' class="h-5 w-5"></box-icon>
-                                </a>
-                                <a href="{{ route('faq.edit', $item->id) }}"
-                                    class="text-gray-900 border border-gray-800 font-medium rounded-md text-sm p-2 text-center flex items-center justify-center">
-                                    <box-icon name='pencil' class="h-5 w-5"></box-icon>
                                 </a>
                                 <form action="{{ route('faq.destroy', $item->id) }}" method="POST">
                                     <input type="hidden" name="_method" value="DELETE">

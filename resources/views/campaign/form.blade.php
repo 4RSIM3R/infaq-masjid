@@ -28,7 +28,7 @@
 
         <div class="mb-5">
             <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Nama</label>
-            <input type="text" id="name" name="name" value={{ isset($data->name) ? $data->name : '' }}
+            <input type="text" id="name" name="name" value="{{ isset($data->name) ? $data->name : '' }}"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md  block w-full p-2.5" />
             @error('name')
                 <div class="mt-2">

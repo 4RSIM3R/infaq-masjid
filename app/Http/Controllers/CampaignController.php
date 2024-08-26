@@ -54,8 +54,8 @@ class CampaignController extends Controller
 
     public function show($id)
     {
-        $data = $this->service->findById($id, relations: ['donations']);
-        return view('campaign.detail', compact('data'));
+        $data = $this->service->findById($id);
+        return view('campaign.form', compact('data'));
     }
 
 
@@ -67,7 +67,7 @@ class CampaignController extends Controller
         $payload = $request->validated();
         $thumbnail = $request->file('thumbnail');
         unset($payload['thumbnail']);
-        $result = $this->service->update($payload, $id, image: ["thumbnail" => $thumbnail]);
+        $result = $this->service->update($id, $payload, image: ["thumbnail" => $thumbnail]);
 
         if ($result instanceof Exception) {
             return redirect()->back()->withErrors($result->getMessage());

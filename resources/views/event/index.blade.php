@@ -56,10 +56,6 @@
                                     class="text-gray-900 border border-gray-800 font-medium rounded-md text-sm p-2 text-center flex items-center justify-center">
                                     <box-icon name='detail' class="h-5 w-5"></box-icon>
                                 </a>
-                                <a href="{{ route('event.edit', $item->id) }}"
-                                    class="text-gray-900 border border-gray-800 font-medium rounded-md text-sm p-2 text-center flex items-center justify-center">
-                                    <box-icon name='pencil' class="h-5 w-5"></box-icon>
-                                </a>
                                 <form action="{{ route('event.destroy', $item->id) }}" method="POST">
                                     <input type="hidden" name="_method" value="DELETE">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
