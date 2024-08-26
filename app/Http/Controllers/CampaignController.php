@@ -46,6 +46,11 @@ class CampaignController extends Controller
         }
     }
 
+    public function report($id)
+    {
+        $data = $this->service->findById($id, relations: ['donations']);
+        return view('campaign.report', compact('data'));
+    }
 
     public function show($id)
     {
