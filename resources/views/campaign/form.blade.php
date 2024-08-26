@@ -59,10 +59,30 @@
         </div>
 
         <div class="mb-5">
+            <label for="end_date" class="block mb-2 text-sm font-medium text-gray-900">End Date</label>
+            <input type="date" id="end_date" name="end_date"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md  block w-full p-2.5" />
+            @error('end_date')
+                <div class="mt-2">
+                    <div class="text-sm text-red-600">
+                        {{ $errors->first('end_date') }}
+                    </div>
+                </div>
+            @enderror
+        </div>
+
+        <div class="mb-5">
             <label class="block mb-2 text-sm font-medium text-gray-900" for="thumbnail">Upload file</label>
             <input
                 class="block w-full text-sm text-teal-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
                 id="thumbnail" name="thumbnail" type="file" accept="image/*">
+            @error('thumbnail')
+                <div class="mt-2">
+                    <div class="text-sm text-red-600">
+                        {{ $errors->first('thumbnail') }}
+                    </div>
+                </div>
+            @enderror
         </div>
 
         <button type="submit"

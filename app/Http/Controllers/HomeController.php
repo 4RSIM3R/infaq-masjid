@@ -29,9 +29,9 @@ class HomeController extends Controller
     public function index()
     {
         $campaigns = Campaign::query()->take(4)->get();
-        $event = Event::query()->take(4)->get();
-        $faq = Faq::query()->get();
-        return view('home', compact('campaigns', 'event', 'faq'));
+        $events = Event::query()->take(4)->get();
+        $faqs = Faq::query()->get();
+        return view('home', compact('campaigns', 'events', 'faqs'));
     }
 
     public function about()

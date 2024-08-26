@@ -2,8 +2,7 @@
 
 @section('content')
     <div class="relative isolate overflow-hidden">
-        <img src="{{ asset('masjid.jpg') }}"
-            alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
+        <img src="{{ asset('masjid.jpg') }}" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
         <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
             <div class="hidden sm:mb-8 sm:flex sm:justify-center">
                 <div
@@ -86,7 +85,7 @@
     <div class="my-16 max-w-screen-xl mx-auto flex flex-col">
         <p class="text-2xl font-bold text-center">kegiatan Masjid Darul Ilmi</p>
         <div class="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
-            @foreach ($event as $item)
+            @foreach ($events as $item)
                 <a href="{{ route('home.event_detail', $item->id) }}">
                     <div class="relative">
                         <div class="relative h-72 w-full overflow-hidden rounded-lg">
@@ -116,15 +115,51 @@
     </div>
     <div class="my-16 max-w-screen-xl mx-auto flex flex-col">
         <p class="text-2xl font-bold text-center">Pertanyaan yang sering diajukan</p>
-        <div class="mt-20">
-            <dl class="space-y-16 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-16 sm:space-y-0 lg:grid-cols-3 lg:gap-x-10">
-                @foreach ($faq as $item)
-                    <div>
-                        <dt class="text-base font-semibold leading-7 text-gray-900">{{ $item->question }}</dt>
-                        <dd class="mt-2 text-base leading-7 text-gray-600">{{ $item->answer }}</dd>
-                    </div>
-                @endforeach
-            </dl>
+        <div class="mt-8 w-full">
+            @foreach ($faqs as $index => $faq)
+                <div class="pt-6 max-w-lg mx-auto">
+                    <dt>
+                        <!-- Expand/collapse question button -->
+                        <button type="button" class="flex w-full items-start justify-between text-left text-gray-900"
+                            aria-controls="faq-{{ $index }}" aria-expanded="false"
+                            onclick="toggleFAQ('{{ $index }}')">
+                            <span class="text-base font-semibold leading-7">{{ $faq['question'] }}</span>
+                            <span class="ml-6 flex h-7 items-center">
+                                <svg id="icon-expand-{{ $index }}" class="h-6 w-6" fill="none"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                                </svg>
+                                <svg id="icon-collapse-{{ $index }}" class="hidden h-6 w-6" fill="none"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6" />
+                                </svg>
+                            </span>
+                        </button>
+                    </dt>
+                    <dd class="mt-2 pr-12 hidden" id="faq-{{ $index }}">
+                        <p class="text-base leading-7 text-gray-600">{{ $faq['answer'] }}</p>
+                    </dd>
+                </div>
+            @endforeach
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        function toggleFAQ(index) {
+            const faqContent = document.getElementById('faq-' + index);
+            const iconExpand = document.getElementById('icon-expand-' + index);
+            const iconCollapse = document.getElementById('icon-collapse-' + index);
+
+            const isExpanded = faqContent.classList.contains('hidden');
+
+            // Toggle visibility of the answer
+            faqContent.classList.toggle('hidden');
+
+            // Toggle icons
+            iconExpand.classList.toggle('hidden');
+            iconCollapse.classList.toggle('hidden');
+        }
+    </script>
+@endpush

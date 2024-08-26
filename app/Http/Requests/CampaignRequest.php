@@ -26,6 +26,7 @@ class CampaignRequest extends FormRequest
             'description' => 'required|string',
             'target' => 'required|numeric',
             'thumbnail' => 'required|image|max:2048|mimes:jpeg,png,jpg,gif',
+            'end_date' => 'required|date',
         ];
     }
 }
