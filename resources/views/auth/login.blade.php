@@ -19,11 +19,11 @@
     </style>
 </head>
 
-<body class="h-screen w-full bg-gray-50">
+<body class="h-screen w-full bg-white">
 
     <div class="h-screen mx-auto w-full max-w-sm lg:w-96 p-4 flex flex-col justify-center">
         <div class="flex flex-col justify-center items-center">
-            <img class="h-24 w-24" src="{{ asset('blue.png') }}">
+            <img class="h-24 w-24" src="{{ asset('white.png') }}">
             <h2 class="mt-8 text-xl font-bold leading-9 tracking-tight text-gray-900 text-center">
                 BerInfaq Console
             </h2>

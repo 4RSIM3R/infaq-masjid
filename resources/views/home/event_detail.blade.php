@@ -1,7 +1,7 @@
 @extends('layouts.guest')
 
 @section('content')
-    <div class="relative isolate my-24"></div>
+    <div class="relative isolate my-32"></div>
     <div class=" max-w-screen-xl mx-auto mt-20 flex flex-col items-start justify-start">
         <div class="mx-auto max-w-screen-xl">
             <img src="{{ $event->thumbnail }}" class="w-full border border-gray-200 h-auto rounded-lg">

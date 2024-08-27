@@ -1,9 +1,9 @@
 @extends('layouts.guest')
 
 @section('content')
-    <div class="relative isolate my-24"></div>
-    <div class=" max-w-screen-xl mx-auto mt-20">
-        <div class="flex items-start space-x-4">
+    <div class="relative isolate my-32"></div>
+    <div class="max-w-screen-xl mx-auto mt-20">
+        <div class="flex items-center justify-center space-x-4">
             <div class="max-w-screen-lg">
                 <img src="{{ $campaign->thumbnail }}" class="w-full border border-gray-200 h-auto rounded-lg">
             </div>

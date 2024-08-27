@@ -35,7 +35,7 @@
     </div>
     <div class="my-16 max-w-screen-xl mx-auto flex flex-col">
         <p class="text-2xl font-bold text-center">Yuk Ber-infaq</p>
-        <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 place-items-center justify-items-center">
             @foreach ($campaigns as $data)
                 <div class="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white">
                     <a href="{{ route('home.campaign_detail', $data->id) }}">
