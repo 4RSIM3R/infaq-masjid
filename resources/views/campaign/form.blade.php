@@ -11,7 +11,8 @@
 
         <div>
             <h1 class="text-xl font-semibold">Form Campaign</h1>
-            <p class="text-sm text-gray-400 mt-1">Tambah campaign</p>
+            <p class="text-sm text-gray-400 mt-1">{{ isset($data->id) ? 'Ubah Campaign Infaq' : 'Tambah Campaign Infaq' }}
+            </p>
         </div>
 
         @if ($errors->any())
@@ -67,7 +68,7 @@
         </div>
 
         <div class="mb-5">
-            <label for="end_date" class="block mb-2 text-sm font-medium text-gray-900">End Date</label>
+            <label for="end_date" class="block mb-2 text-sm font-medium text-gray-900">Deadline</label>
             <input type="date" id="end_date" name="end_date" value="{{ isset($data->end_date) ? $data->end_date : '' }}"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md  block w-full p-2.5" />
             @error('end_date')

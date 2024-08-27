@@ -9,8 +9,9 @@
             <input type="hidden" name="_method" value="PUT">
         @endif
         <div>
-            <h1 class="text-xl font-semibold">Form Event</h1>
-            <p class="text-sm text-gray-400 mt-1">Tambah kegiatan masjid</p>
+            <h1 class="text-xl font-semibold">Form Kegiatan Masjid</h1>
+            <p class="text-sm text-gray-400 mt-1">
+                {{ isset($data->id) ? 'Ubah Informasi Kegiatan Masjid' : 'Tambah Kegiatan Masjid' }}</p>
         </div>
 
         @if ($errors->any())

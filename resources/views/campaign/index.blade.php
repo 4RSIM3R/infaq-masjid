@@ -4,8 +4,7 @@
     <div>
         <div class="flex justify-between items-center">
             <div>
-                <h1 class="text-xl font-semibold">Campaign</h1>
-                <p class="text-sm text-gray-400 mt-1">Campaign infaq</p>
+                <h1 class="text-xl font-semibold">Campaign Infaq Masjid</h1>
             </div>
 
             <a href="{{ route('campaign.create') }}"
@@ -29,7 +28,7 @@
                             Target
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Donation
+                            Terkumpul
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Progres

@@ -59,11 +59,11 @@
             <tr>
                 <th>Nama Campaign</th>
                 <td>{{ $data->name }}</td>
-                <th>Total Donasi</th>
+                <th>Total Infaq</th>
                 <td>{{ number_format($data->total_donations_paid) }}</td>
             </tr>
             <tr>
-                <th>Deathline</th>
+                <th>Deadline</th>
                 <td>{{ $data->end_date }}</td>
                 <th>Target</th>
                 <td>{{ number_format($data->target) }}</td>

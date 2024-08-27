@@ -4,14 +4,12 @@
     <div>
         <div class="flex justify-between items-center">
             <div>
-                <h1 class="text-xl font-semibold">Event</h1>
-                <p class="text-sm text-gray-400 mt-1">Kegiatan Masjid</p>
+                <h1 class="text-xl font-semibold">Informasi Kegiatan Masjid</h1>
             </div>
-
             <a href="{{ route('event.create') }}"
                 class="flex items-center py-2.5 px-5 text-sm font-medium focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 focus:z-10">
                 <box-icon class="h-4 w-4 mr-2" name='plus'></box-icon>
-                Tambah Event
+                Tambah Kegiatan
             </a>
         </div>
 
