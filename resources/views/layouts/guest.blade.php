@@ -79,106 +79,31 @@
                         yang tak terputus sehingga mendapat ketenangan hati dan kebaikan yang abadi
                     </p>
                 </div>
-                <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-                    <div class="md:grid md:grid-cols-2 md:gap-8">
-                        <div>
-                            <h3 class="text-sm font-semibold leading-6 text-gray-900">Solutions</h3>
-                            <ul role="list" class="mt-6 space-y-4">
-                                <li>
-                                    <a href="#"
-                                        class="text-sm leading-6 text-gray-600 hover:text-gray-900">Marketing</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="text-sm leading-6 text-gray-600 hover:text-gray-900">Analytics</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="text-sm leading-6 text-gray-600 hover:text-gray-900">Commerce</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="text-sm leading-6 text-gray-600 hover:text-gray-900">Insights</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="mt-10 md:mt-0">
-                            <h3 class="text-sm font-semibold leading-6 text-gray-900">Support</h3>
-                            <ul role="list" class="mt-6 space-y-4">
-                                <li>
-                                    <a href="#"
-                                        class="text-sm leading-6 text-gray-600 hover:text-gray-900">Pricing</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="text-sm leading-6 text-gray-600 hover:text-gray-900">Documentation</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="text-sm leading-6 text-gray-600 hover:text-gray-900">Guides</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">API
-                                        Status</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="md:grid md:grid-cols-2 md:gap-8">
-                        <div>
-                            <h3 class="text-sm font-semibold leading-6 text-gray-900">Company</h3>
-                            <ul role="list" class="mt-6 space-y-4">
-                                <li>
-                                    <a href="#"
-                                        class="text-sm leading-6 text-gray-600 hover:text-gray-900">About</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="text-sm leading-6 text-gray-600 hover:text-gray-900">Blog</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="text-sm leading-6 text-gray-600 hover:text-gray-900">Jobs</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="text-sm leading-6 text-gray-600 hover:text-gray-900">Press</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="text-sm leading-6 text-gray-600 hover:text-gray-900">Partners</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="mt-10 md:mt-0">
-                            <h3 class="text-sm font-semibold leading-6 text-gray-900">Legal</h3>
-                            <ul role="list" class="mt-6 space-y-4">
-                                <li>
-                                    <a href="#"
-                                        class="text-sm leading-6 text-gray-600 hover:text-gray-900">Claim</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="text-sm leading-6 text-gray-600 hover:text-gray-900">Privacy</a>
-                                </li>
-                                <li>
-                                    <a href="#"
-                                        class="text-sm leading-6 text-gray-600 hover:text-gray-900">Terms</a>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="flex flex-col items-center justify-start">
+                    <div>
+                        <h3 class="text-sm font-semibold leading-6 text-gray-900">Company</h3>
+                        <ul role="list" class="mt-6 space-y-4">
+                            <li>
+                                <a href="{{ route('login') }}"
+                                    class="text-sm leading-6 text-gray-600 hover:text-gray-900">Admin</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('home.about') }}"
+                                    class="text-sm leading-6 text-gray-600 hover:text-gray-900">
+                                    Tentang Kami
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="space-y-8">
-                    <img class="h-14" src="{{ asset('white.png') }}">
-                    <p class="text-sm leading-6 text-gray-600">
-                        Sebuah Website yang bertujuan untuk mengajak umat muslim untuk selalu beramal dan berbagi pahala
-                        yang tak terputus sehingga mendapat ketenangan hati dan kebaikan yang abadi
-                    </p>
+                <div class="flex flex-col items-end justify-start text-right">
+                    <p>Masjid Darul Ilmi PNJ</p>
+                    <p class="text-sm mt-2">Polteknik Negeri Jakarta, Jalan, Kukusan, Beji, Depok, Jawa Barat 16425</p>
                 </div>
             </div>
             <div class="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
-                <p class="text-xs leading-5 text-gray-500">&copy; {{ Carbon\Carbon::now()->year }} Berinfaq. All rights reserved.</p>
+                <p class="text-xs leading-5 text-gray-500">&copy; {{ Carbon\Carbon::now()->year }} Berinfaq. All rights
+                    reserved.</p>
             </div>
         </div>
     </footer>
