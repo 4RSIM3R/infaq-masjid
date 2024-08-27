@@ -48,10 +48,10 @@
                                 {{ $item->name }}
                             </td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                {{ $item->target }}
+                                {{ number_format($item->target) }}
                             </td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                {{ $item->total_donations_paid }}
+                                {{ number_format($item->total) }}
                             </td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                 {{ $item->progress_percentage }}%

@@ -29,8 +29,7 @@
     </div>
 
     <div class="relative overflow-x-auto mt-4">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Noteworthy technology
-            acquisitions 2021</h5>
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Infaq Yang Diperoleh</h5>
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
                 <tr>
@@ -64,10 +63,10 @@
                             {{ $item->name }}
                         </td>
                         <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                            {{ $item->target }}
+                            {{ number_format($item->target) }}
                         </td>
                         <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                            {{ $item->total_donations_paid }}
+                            {{ number_format($item->total_donations_paid) }}
                         </td>
                         <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                             {{ $item->progress_percentage }}%
