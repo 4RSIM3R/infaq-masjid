@@ -4,7 +4,7 @@
     <div class="grid grid-cols-12 gap-8">
         <div class="col-span-4 p-6 bg-white border border-gray-200 rounded-lg shadow">
             <a href="#">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $paid }}</h5>
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ number_format($paid) }}</h5>
             </a>
             <p class="mb-3 font-normal text-gray-700">
                 Total Donasi
@@ -34,7 +34,7 @@
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
                 <tr>
                     <th scope="col" class="px-6 py-3">
-                        ID
+                        Thumbnail
                     </th>
                     <th scope="col" class="px-6 py-3">
                         Nama
@@ -54,7 +54,7 @@
                 @foreach ($data['items'] as $item)
                     <tr class="bg-white border-b ">
                         <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                            {{ $item->id }}
+                            <img src="{{ $item->thumbnail }}" alt="{{ $item->name }}" class="w-16 h-auto" />
                         </th>
                         <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                             {{ $item->name }}
