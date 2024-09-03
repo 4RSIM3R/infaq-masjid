@@ -10,5 +10,5 @@ Route::group(['prefix' => 'backoffice/event', 'as' => 'event.'], function () {
     Route::get('{id}/edit', [EventController::class, 'edit'])->name('edit');
     Route::put('{id}/edit', [EventController::class, 'update'])->name('update');
     Route::get('{id}/show', [EventController::class, 'show'])->name('show');
-    Route::post('{id}/delete', [EventController::class, 'destroy'])->name('destroy');
+    Route::delete('{id}/delete', [EventController::class, 'destroy'])->name('destroy');
 });

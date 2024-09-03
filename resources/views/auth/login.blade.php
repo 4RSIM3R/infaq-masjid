@@ -33,7 +33,7 @@
         </div>
 
         <div class="mt-8">
-            <form action="{{ route('login') }}" method="POST" class="space-y-6">
+            <form action="{{ route('auth') }}" method="POST" class="space-y-6">
                 @csrf
                 <div>
                     <label for="email" class="block text-sm font-medium leading-6 text-gray-900">
