@@ -25,15 +25,15 @@
         <div class="flex flex-col justify-center items-center">
             <img class="h-24 w-24" src="{{ asset('white.png') }}">
             <h2 class="mt-8 text-xl font-bold leading-9 tracking-tight text-gray-900 text-center">
-                BerInfaq Console
+                Login BerInfaq
             </h2>
             <p class="mt-1 text-sm leading-6 text-gray-500 text-center">
                 Yuk, Mari Kita Bangun Kebersamaan dan Keberkahan!
             </p>
         </div>
 
-        <div class="mt-8">
-            <form action="{{ route('auth') }}" method="POST" class="space-y-6">
+        <div class="my-2">
+            <form action="{{ route('login.store') }}" method="POST" class="space-y-6">
                 @csrf
                 <div>
                     <label for="email" class="block text-sm font-medium leading-6 text-gray-900">
@@ -69,6 +69,11 @@
                 </div>
             </form>
         </div>
+
+        <span class="text-center" >
+            Belum punya akun? <a href="{{ route('register.form') }}" class="text-teal-600 hover:text-teal-500">Daftar disini</a>
+        </span>
+
     </div>
 
 </body>
