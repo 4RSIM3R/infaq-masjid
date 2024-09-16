@@ -61,17 +61,23 @@ class HomeController extends Controller
 
     public function campaign_detail($id)
     {
-        $campaign = $this->campaign->findById($id);
+        $campaign = $this->campaign->findById($id, ['donations']);
         return view('home.campaign_detail', compact('campaign'));
     }
 
     public function donation($id, DonationRequest $request)
     {
         $campaign = $this->campaign->findById($id);
+        $payload = $request->validated();
+
+        if (($payload['amount'] + $campaign->total_donations_paid) > $campaign->target) {
+            return redirect()->back()->withErrors('Total donation amount is greater than target');
+        }
+
         \Midtrans\Config::$serverKey = env('SERVER_KEY');
 
         try {
-            $payload = $request->validated();
+
             $payload['unique_id'] = Uuid::uuid7()->toString();
             $payload['method'] = 'MIDTRANS';
             $donation = Donation::create($payload);
