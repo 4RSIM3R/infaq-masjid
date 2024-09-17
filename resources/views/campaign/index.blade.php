@@ -31,6 +31,9 @@
                             Terkumpul
                         </th>
                         <th scope="col" class="px-6 py-3">
+                            Terpakai
+                        </th>
+                        <th scope="col" class="px-6 py-3">
                             Progres
                         </th>
                         <th scope="col" class="px-6 py-3">
@@ -51,7 +54,10 @@
                                 {{ number_format($item->target) }}
                             </td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                {{ number_format($item->total) }}
+                                {{ number_format($item->total_donations_paid) }}
+                            </td>
+                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                {{ number_format($item->total_report) }}
                             </td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                 {{ $item->progress_percentage }}%

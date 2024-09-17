@@ -15,7 +15,7 @@ class Campaign extends Model implements HasMedia
 
     protected $hidden = ['media'];
 
-    protected $appends = ['thumbnail', 'total_donations_paid', 'progress_percentage'];
+    protected $appends = ['thumbnail', 'total_donations_paid', 'progress_percentage', 'total_report'];
 
     public function registerMediaCollections(): void
     {
@@ -32,9 +32,19 @@ class Campaign extends Model implements HasMedia
         return $this->hasMany(Donation::class);
     }
 
+    public function reports()
+    {
+        return $this->hasMany(Report::class);
+    }
+
     public function getTotalDonationsPaidAttribute()
     {
         return $this->donations()->where('status', 'paid')->sum('amount');
+    }
+
+    public function getTotalReportAttribute()
+    {
+        return $this->reports()->sum('amount');
     }
 
     public function getProgressPercentageAttribute()

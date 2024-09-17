@@ -3,7 +3,7 @@
 use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 
-Route::group(['prefix' => 'backoffice/event', 'as' => 'event.'], function () {
+Route::group(['prefix' => 'backoffice/event', 'as' => 'event.', 'middleware' => ['permission:admin']], function () {
     Route::get('', [EventController::class, 'index'])->name('index');
     Route::get('create', [EventController::class, 'create'])->name('create');
     Route::post('create', [EventController::class, 'store'])->name('store');

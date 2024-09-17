@@ -32,6 +32,16 @@
             </p>
         </div>
 
+        @if ($errors->any())
+            <div class="mt-2">
+                @foreach ($errors->all() as $error)
+                    <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50" role="alert">
+                        {{ $error }}
+                    </div>
+                @endforeach
+            </div>
+        @endif
+
         <div class="my-2">
             <form action="{{ route('login.store') }}" method="POST" class="space-y-6">
                 @csrf
@@ -70,8 +80,9 @@
             </form>
         </div>
 
-        <span class="text-center" >
-            Belum punya akun? <a href="{{ route('register.form') }}" class="text-teal-600 hover:text-teal-500">Daftar disini</a>
+        <span class="text-center">
+            Belum punya akun? <a href="{{ route('register.form') }}" class="text-teal-600 hover:text-teal-500">Daftar
+                disini</a>
         </span>
 
     </div>

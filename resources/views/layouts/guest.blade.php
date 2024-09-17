@@ -84,7 +84,7 @@
                         <h3 class="text-sm font-semibold leading-6 text-gray-900">Company</h3>
                         <ul role="list" class="mt-6 space-y-4">
                             <li>
-                                <a href="{{ route('login') }}"
+                                <a href="{{ route('login.form') }}"
                                     class="text-sm leading-6 text-gray-600 hover:text-gray-900">Admin</a>
                             </li>
                             <li>
