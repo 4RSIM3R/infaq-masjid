@@ -22,10 +22,17 @@
                 <img src="{{ asset('white.png') }}" class="h-16 object-cover">
             </a>
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                <a href="{{ route('home.campaign') }}"
-                    class="text-white bg-teal-700 hover:bg-teal-800 font-medium rounded-lg text-sm px-4 py-2 text-center hidden sm:flex">
-                    Donasi Sekarang
-                </a>
+                @if (Auth::check())
+                    <a href="{{ route('home.campaign') }}"
+                        class="text-white bg-teal-700 hover:bg-teal-800 font-medium rounded-lg text-sm px-4 py-2 text-center hidden sm:flex">
+                        Donasi Sekarang
+                    </a>
+                @else
+                    <a href="{{ route('login.form') }}"
+                        class="text-white bg-teal-700 hover:bg-teal-800 font-medium rounded-lg text-sm px-4 py-2 text-center hidden sm:flex">
+                        Login Sekarang
+                    </a>
+                @endif
                 <button data-collapse-toggle="navbar-sticky" type="button"
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100"
                     aria-controls="navbar-sticky" aria-expanded="false">

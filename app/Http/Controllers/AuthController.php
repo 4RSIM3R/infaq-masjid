@@ -19,10 +19,14 @@ class AuthController extends Controller
 
     public function login_store(LoginRequest $request)
     {
-        $user = Auth::attempt($request->validated());
+        $payload = $request->validated();
+        $auth = Auth::attempt($payload);
+        $user = User::where('email', $payload['email'])->first();
 
-        if ($user) {
+        if ($auth && $user->hasRole('admin')) {
             return redirect()->route('backoffice.index');
+        } else if ($auth && $user->hasRole('user')) {
+            return redirect()->route('home.index');
         } else {
             return redirect()->back()->withErrors(['email' => 'Invalid email or password']);
         }
