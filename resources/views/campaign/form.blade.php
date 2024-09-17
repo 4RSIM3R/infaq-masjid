@@ -81,7 +81,7 @@
         </div>
 
         <div class="mb-5">
-            <label class="block mb-2 text-sm font-medium text-gray-900" for="thumbnail">Upload file</label>
+            <label class="block mb-2 text-sm font-medium text-gray-900" for="thumbnail">Upload thumbnail</label>
             <input
                 class="block w-full text-sm text-teal-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
                 id="thumbnail" name="thumbnail" type="file" accept="image/*">

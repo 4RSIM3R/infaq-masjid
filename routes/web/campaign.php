@@ -12,4 +12,6 @@ Route::group(['prefix' => 'backoffice/campaign', 'as' => 'campaign.'], function 
     Route::get('{id}/show', [CampaignController::class, 'show'])->name('show');
     Route::delete('{id}/delete', [CampaignController::class, 'destroy'])->name('destroy');
     Route::get('{id}/report', [CampaignController::class, 'report'])->name('report');
+    Route::get('{id}/usage', [CampaignController::class, 'usage_form'])->name('usage.form');
+    Route::post('{id}/usage', [CampaignController::class, 'usage_store'])->name('usage.store');
 });

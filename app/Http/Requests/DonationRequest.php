@@ -15,6 +15,7 @@ class DonationRequest extends FormRequest
     {
         return [
             'campaign_id' => 'required|exists:campaigns,id',
+            'user_id' => 'required|exists:users,id',
             'donatur' => 'required|string',
             'phone_number' => 'required|string',
             'amount' => 'required|numeric',

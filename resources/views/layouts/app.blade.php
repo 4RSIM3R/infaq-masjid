@@ -125,35 +125,35 @@
                     <li>
                         <a href="{{ route('backoffice.index') }}"
                             class="flex items-center p-2 text-sm font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                            <box-icon class="h-5 w-5" name="home"></box-icon>
+                            <box-icon class="h-4 w-4" name="home"></box-icon>
                             <span class="ml-3">Backoffice</span>
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('event.index') }}"
                             class="flex items-center p-2 text-sm font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                            <box-icon type='solid' class="h-5 w-5" name='universal-access'></box-icon>
+                            <box-icon type='solid' class="h-4 w-4" name='universal-access'></box-icon>
                             <span class="ml-3">Kegiatan</span>
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('campaign.index') }}"
                             class="flex items-center p-2 text-sm font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                            <box-icon class="h-5 w-5" name="layout"></box-icon>
+                            <box-icon class="h-4 w-4" name="layout"></box-icon>
                             <span class="ml-3">Campaign</span>
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('faq.index') }}"
                             class="flex items-center p-2 text-sm font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                            <box-icon class="h-5 w-5" name="question-mark"></box-icon>
+                            <box-icon class="h-4 w-4" name="question-mark"></box-icon>
                             <span class="ml-3">Faq</span>
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('setting.index') }}"
                             class="flex items-center p-2 text-sm font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                            <box-icon class="h-5 w-5" name="cog"></box-icon>
+                            <box-icon class="h-4 w-4" name="cog"></box-icon>
                             <span class="ml-3">Setting</span>
                         </a>
                     </li>
