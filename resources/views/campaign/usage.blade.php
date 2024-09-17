@@ -1,13 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <form class="flex flex-col space-y-4"
-        action="{{ isset($data->id) ? route('campaign.update', $data->id) : route('campaign.store') }}" method="POST"
+    <form class="flex flex-col space-y-4" action="{{ route('campaign.usage.store', $id) }}" method="POST"
         enctype="multipart/form-data">
-
-        @if (isset($data->id))
-            <input type="hidden" name="_method" value="PUT">
-        @endif
 
         <div>
             <h1 class="text-xl font-semibold">Form Pengunaan Infaq</h1>

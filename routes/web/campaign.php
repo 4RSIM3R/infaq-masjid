@@ -3,7 +3,7 @@
 use App\Http\Controllers\CampaignController;
 use Illuminate\Support\Facades\Route;
 
-Route::group(['prefix' => 'backoffice/campaign', 'as' => 'campaign.'], function () {
+Route::group(['prefix' => 'backoffice/campaign', 'as' => 'campaign.', 'middleware' => ['permission:admin']], function () {
     Route::get('', [CampaignController::class, 'index'])->name('index');
     Route::get('create', [CampaignController::class, 'create'])->name('create');
     Route::post('create', [CampaignController::class, 'store'])->name('store');

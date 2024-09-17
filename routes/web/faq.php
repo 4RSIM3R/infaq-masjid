@@ -3,7 +3,7 @@
 use App\Http\Controllers\FaqController;
 use Illuminate\Support\Facades\Route;
 
-Route::group(['prefix' => 'backoffice/faq', 'as' => 'faq.'], function () {
+Route::group(['prefix' => 'backoffice/faq', 'as' => 'faq.', 'middleware' => ['permission:admin']], function () {
     Route::get('', [FaqController::class, 'index'])->name('index');
     Route::get('create', [FaqController::class, 'create'])->name('create');
     Route::post('create', [FaqController::class, 'store'])->name('store');
