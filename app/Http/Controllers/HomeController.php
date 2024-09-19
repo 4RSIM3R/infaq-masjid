@@ -61,7 +61,7 @@ class HomeController extends Controller
 
     public function campaign_detail($id)
     {
-        $campaign = $this->campaign->findById($id, ['donations']);
+        $campaign = $this->campaign->findById($id, ['donations', 'reports']);
         return view('home.campaign_detail', compact('campaign'));
     }
 

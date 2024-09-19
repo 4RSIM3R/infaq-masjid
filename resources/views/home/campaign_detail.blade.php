@@ -105,7 +105,7 @@
                             <div class="flex items-center">
                                 <div class="flex-shrink-0">
                                     <img class="w-8 h-8 rounded-full"
-                                        src="https://cdn-icons-png.flaticon.com/512/9187/9187604.png" alt="Neil image">
+                                        src="https://cdn-icons-png.flaticon.com/512/9187/9187604.png">
                                 </div>
                                 <div class="flex-1 min-w-0 ms-4">
                                     <p class="text-sm font-medium text-gray-900 truncate ">
@@ -125,7 +125,28 @@
             </div>
             <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="report-usage" role="tabpanel"
                 aria-labelledby="dashboard-tab">
-                list penggunaan infaq
+                <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+                    @foreach ($campaign->reports as $report)
+                        <li class="py-3">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <img class="w-8 h-8 rounded-full"
+                                        src="{{ $report->thumbnail }}">
+                                </div>
+                                <div class="flex-1 min-w-0 ms-4">
+                                    <p class="text-sm font-medium text-gray-900 truncate ">
+                                        {{ $report->title }}
+                                    </p>
+                                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                                        {{ $report->description }}
+                                    </p>
+                                </div>
+                                <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
+                                    {{ number_format($report->amount, 0, ',', '.') }}
+                                </div>
+                            </div>
+                        </li>
+                    @endforeach
             </div>
         </div>
 
