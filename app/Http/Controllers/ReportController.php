@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ReportRequest;
 use Exception;
 
-class ReportContoller extends Controller
+class ReportController extends Controller
 {
 
     protected ReportContract $service;

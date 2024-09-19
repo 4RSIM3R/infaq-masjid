@@ -29,6 +29,9 @@
                             Jumlah
                         </th>
                         <th scope="col" class="px-6 py-3">
+                            Deskripsi
+                        </th>
+                        <th scope="col" class="px-6 py-3">
                             Action
                         </th>
                     </tr>
@@ -40,10 +43,13 @@
                                 {{ $item->id }}
                             </th>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                {{ $item->campian->name }}
+                                {{ $item->campaign->name }}
                             </td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                 {{ $item->amount }}
+                            </td>
+                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                {{ $item->description }}
                             </td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap flex space-x-2 items-center">
                                 <a href="{{ route('faq.show', $item->id) }}"

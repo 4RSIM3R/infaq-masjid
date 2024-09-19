@@ -108,15 +108,14 @@
                                         src="https://cdn-icons-png.flaticon.com/512/9187/9187604.png" alt="Neil image">
                                 </div>
                                 <div class="flex-1 min-w-0 ms-4">
-                                    <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                                        Neil Sims
+                                    <p class="text-sm font-medium text-gray-900 truncate ">
+                                        {{ $donation->user->name }}
                                     </p>
                                     <p class="text-sm text-gray-500 truncate dark:text-gray-400">
                                         {{ $donation->created_at }} / {{ $donation->status }}
                                     </p>
                                 </div>
-                                <div
-                                    class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                                <div class="inline-flex items-center text-base font-semibold text-gray-900 ">
                                     {{ number_format($donation->amount, 0, ',', '.') }}
                                 </div>
                             </div>

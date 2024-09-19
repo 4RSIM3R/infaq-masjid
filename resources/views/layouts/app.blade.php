@@ -36,7 +36,7 @@
                 <div class="flex justify-start items-center">
                     <button data-drawer-target="drawer-navigation" data-drawer-toggle="drawer-navigation"
                         aria-controls="drawer-navigation"
-                        class="p-2 mr-2 text-gray-600 rounded-lg cursor-pointer md:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-700 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                        class="p-2 mr-2 text-gray-600 rounded-lg cursor-pointer md:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-700 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400  dark:hover:text-white">
                         <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -66,7 +66,7 @@
                                 </svg>
                             </div>
                             <input type="text" name="email" id="topbar-search"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                 placeholder="Search Activity" />
                         </div>
                     </form> --}}
@@ -85,9 +85,9 @@
                         id="dropdown">
                         <div class="py-3 px-4">
                             <span
-                                class="block text-sm font-semibold text-gray-900 dark:text-white">{{ auth()->user()->name }}</span>
+                                class="block text-sm font-semibold text-gray-900 ">{{ auth()->user()->name }}</span>
                             <span
-                                class="block text-sm text-gray-900 truncate dark:text-white">{{ auth()->user()->email }}</span>
+                                class="block text-sm text-gray-900 truncate ">{{ auth()->user()->email }}</span>
                         </div>
                         <ul class="py-1 text-gray-700 dark:text-gray-300" aria-labelledby="dropdown">
                             <li>
@@ -117,46 +117,53 @@
                             </svg>
                         </div>
                         <input type="text" name="search" id="sidebar-search"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             placeholder="Search" />
                     </div>
                 </form>
                 <ul class="space-y-2">
                     <li>
                         <a href="{{ route('backoffice.index') }}"
-                            class="flex items-center p-2 text-sm font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            class="flex items-center p-2 text-sm font-medium text-gray-900 rounded-lg  hover:bg-gray-100  group">
                             <box-icon class="h-4 w-4" name="home"></box-icon>
                             <span class="ml-3">Backoffice</span>
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('event.index') }}"
-                            class="flex items-center p-2 text-sm font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            class="flex items-center p-2 text-sm font-medium text-gray-900 rounded-lg  hover:bg-gray-100  group">
                             <box-icon type='solid' class="h-4 w-4" name='universal-access'></box-icon>
                             <span class="ml-3">Kegiatan</span>
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('campaign.index') }}"
-                            class="flex items-center p-2 text-sm font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            class="flex items-center p-2 text-sm font-medium text-gray-900 rounded-lg  hover:bg-gray-100  group">
                             <box-icon class="h-4 w-4" name="layout"></box-icon>
                             <span class="ml-3">Campaign</span>
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('faq.index') }}"
-                            class="flex items-center p-2 text-sm font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            class="flex items-center p-2 text-sm font-medium text-gray-900 rounded-lg  hover:bg-gray-100  group">
                             <box-icon class="h-4 w-4" name="question-mark"></box-icon>
                             <span class="ml-3">Faq</span>
                         </a>
                     </li>
                     <li>
+                        <a href="{{ route('report.index') }}"
+                            class="flex items-center p-2 text-sm font-medium text-gray-900 rounded-lg  hover:bg-gray-100  group">
+                            <box-icon class="h-4 w-4" name="question-mark"></box-icon>
+                            <span class="ml-3">Laporan</span>
+                        </a>
+                    </li>
+                    {{-- <li>
                         <a href="{{ route('setting.index') }}"
-                            class="flex items-center p-2 text-sm font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                            class="flex items-center p-2 text-sm font-medium text-gray-900 rounded-lg  hover:bg-gray-100  group">
                             <box-icon class="h-4 w-4" name="cog"></box-icon>
                             <span class="ml-3">Setting</span>
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </aside>
