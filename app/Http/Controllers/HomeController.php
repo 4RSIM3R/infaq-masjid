@@ -69,6 +69,7 @@ class HomeController extends Controller
     {
         $campaign = $this->campaign->findById($id);
         $payload = $request->validated();
+        $payload['status'] = 'paid';
 
         if (($payload['amount'] + $campaign->total_donations_paid) > $campaign->target) {
             return redirect()->back()->withErrors('Total donation amount is greater than target');

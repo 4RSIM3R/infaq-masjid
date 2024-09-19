@@ -8,7 +8,7 @@
                 <p class="text-sm text-gray-400 mt-1">Laporan penggunaan infaq</p>
             </div>
 
-            <a href="{{ route('faq.create') }}"
+            <a href="{{ route('report.create') }}"
                 class="flex items-center py-2.5 px-5 text-sm font-medium focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 focus:z-10">
                 <box-icon class="h-4 w-4 mr-2" name='plus'></box-icon>
                 Tambah Laporan

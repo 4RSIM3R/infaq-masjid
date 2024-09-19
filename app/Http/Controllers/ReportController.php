@@ -6,6 +6,7 @@ use App\Contract\ReportContract;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ReportRequest;
+use App\Models\Campaign;
 use Exception;
 
 class ReportController extends Controller
@@ -28,11 +29,13 @@ class ReportController extends Controller
 
     public function create()
     {
-        return view('report.form');
+        $campaigns = Campaign::query()->get(["id", "name"]);
+        return view('report.form', compact('campaigns'));
     }
 
     public function store(ReportRequest $request)
     {
+
         $payload = $request->validated();
         $thumbnail = $request->file('thumbnail');
         unset($payload['thumbnail']);
@@ -48,7 +51,8 @@ class ReportController extends Controller
     public function show($id)
     {
         $data = $this->service->findById($id);
-        return view('report.form', compact('data'));
+        $campaigns = Campaign::query()->get(["id", "name"]);
+        return view('report.form', compact('data', 'campaigns'));
     }
 
     public function edit($id) {}
