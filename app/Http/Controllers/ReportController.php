@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Contract\FaqContract;
-use App\Http\Requests\FaqRequest;
-use Exception;
+use App\Contract\ReportContract;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\ReportRequest;
+use Exception;
 
-class FaqController extends Controller
+class ReportContoller extends Controller
 {
 
-    protected FaqContract $service;
+    protected ReportContract $service;
 
-    public function __construct(FaqContract $service)
+    public function __construct(ReportContract $service)
     {
         $this->service = $service;
     }
@@ -22,19 +23,20 @@ class FaqController extends Controller
         $page = $request->get('page', 1);
         $perPage = $request->get('perPage', 10);
         $data = $this->service->all(paginate: true, page: $page, dataPerPage: $perPage);
-        return view('faq.index', compact('data'));
+        return view('report.index', compact('data'));
     }
 
     public function create()
     {
-        return view('faq.form');
+        return view('report.form');
     }
 
-    public function store(FaqRequest $request)
+    public function store(ReportRequest $request)
     {
         $payload = $request->validated();
-
-        $result = $this->service->create($payload);
+        $thumbnail = $request->file('thumbnail');
+        unset($payload['thumbnail']);
+        $result = $this->service->create($payload, image: ["thumbnail" => $thumbnail]);
 
         if ($result instanceof Exception) {
             return redirect()->back()->withErrors($result->getMessage());
@@ -46,16 +48,17 @@ class FaqController extends Controller
     public function show($id)
     {
         $data = $this->service->findById($id);
-        return view('faq.form', compact('data'));
+        return view('report.form', compact('data'));
     }
 
     public function edit($id) {}
 
-    public function update(FaqRequest $request,  $id)
+    public function update(ReportRequest $request,  $id)
     {
         $payload = $request->validated();
-
-        $result = $this->service->update($id, $payload);
+        $thumbnail = $request->file('thumbnail');
+        unset($payload['thumbnail']);
+        $result = $this->service->update($id, $payload, image: ["thumbnail" => $thumbnail]);
 
         if ($result instanceof Exception) {
             return redirect()->back()->withErrors($result->getMessage());
@@ -63,6 +66,7 @@ class FaqController extends Controller
             return redirect()->route('faq.index');
         }
     }
+
 
     public function destroy($id)
     {

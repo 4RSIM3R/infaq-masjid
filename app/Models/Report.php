@@ -26,4 +26,9 @@ class Report extends Model implements HasMedia
     {
         return $this->getFirstMediaUrl('thumbnail');
     }
+
+    public function campaign()
+    {
+        return $this->belongsTo(Campaign::class);
+    }
 }

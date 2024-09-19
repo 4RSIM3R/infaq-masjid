@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Contract\CampaignContract;
 use App\Contract\ReportContract;
 use App\Http\Requests\CampaignRequest;
-use App\Http\Requests\UsageRequest;
-use App\Models\Report;
 use Exception;
 use Illuminate\Http\Request;
 
@@ -93,22 +91,22 @@ class CampaignController extends Controller
         }
     }
 
-    public function usage_form($id)
-    {
-        return view('campaign.usage', compact('id'));
-    }
+    // public function usage_form($id)
+    // {
+    //     return view('campaign.usage', compact('id'));
+    // }
 
-    public function usage_store($id, UsageRequest $request)
-    {
-        $payload = $request->validated();
-        $thumbnail = $request->file('thumbnail');
-        unset($payload['thumbnail']);
-        $result = $this->report->create($payload, image: ["thumbnail" => $thumbnail]);
+    // public function usage_store($id, UsageRequest $request)
+    // {
+    //     $payload = $request->validated();
+    //     $thumbnail = $request->file('thumbnail');
+    //     unset($payload['thumbnail']);
+    //     $result = $this->report->create($payload, image: ["thumbnail" => $thumbnail]);
 
-        if ($result instanceof Exception) {
-            return redirect()->back()->withErrors($result->getMessage());
-        } else {
-            return redirect()->route('campaign.index');
-        }
-    }
+    //     if ($result instanceof Exception) {
+    //         return redirect()->back()->withErrors($result->getMessage());
+    //     } else {
+    //         return redirect()->route('campaign.index');
+    //     }
+    // }
 }
