@@ -63,10 +63,6 @@
                                 {{ $item->progress_percentage }}%
                             </td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap flex space-x-2 items-center">
-                                <a href="{{ route('campaign.usage.form', $item->id) }}"
-                                    class="text-gray-900 border border-gray-800 font-medium rounded-md text-sm p-2 text-center flex items-center justify-center">
-                                    <box-icon name='edit' class="h-4 w-4"></box-icon>
-                                </a>
                                 <a href="{{ route('campaign.report', $item->id) }}"
                                     class="text-gray-900 border border-gray-800 font-medium rounded-md text-sm p-2 text-center flex items-center justify-center">
                                     <box-icon name='paperclip' class="h-4 w-4"></box-icon>
