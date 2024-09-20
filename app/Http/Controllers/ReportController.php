@@ -44,7 +44,7 @@ class ReportController extends Controller
         if ($result instanceof Exception) {
             return redirect()->back()->withErrors($result->getMessage());
         } else {
-            return redirect()->route('faq.index');
+            return redirect()->route('report.index');
         }
     }
 
@@ -67,7 +67,7 @@ class ReportController extends Controller
         if ($result instanceof Exception) {
             return redirect()->back()->withErrors($result->getMessage());
         } else {
-            return redirect()->route('faq.index');
+            return redirect()->route('report.index');
         }
     }
 
@@ -79,7 +79,7 @@ class ReportController extends Controller
         if ($result instanceof Exception) {
             return redirect()->back()->withErrors($result->getMessage());
         } else {
-            return redirect()->route('faq.index');
+            return redirect()->route('report.index');
         }
     }
 }

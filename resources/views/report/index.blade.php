@@ -52,11 +52,11 @@
                                 {{ $item->description }}
                             </td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap flex space-x-2 items-center">
-                                <a href="{{ route('faq.show', $item->id) }}"
+                                <a href="{{ route('report.show', $item->id) }}"
                                     class="text-gray-900 border border-gray-800 font-medium rounded-md text-sm p-2 text-center flex items-center justify-center">
                                     <box-icon name='detail' class="h-4 w-4"></box-icon>
                                 </a>
-                                <form action="{{ route('faq.destroy', $item->id) }}" method="POST">
+                                <form action="{{ route('report.destroy', $item->id) }}" method="POST">
                                     <input type="hidden" name="_method" value="DELETE">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <input type="hidden" name="id" value="{{ $item->id }}">
