@@ -5,6 +5,10 @@
         action="{{ isset($data->id) ? route('report.update', $data->id) : route('report.store') }}" method="POST"
         enctype="multipart/form-data">
 
+        @if (isset($data->id))
+            <input type="hidden" name="_method" value="PUT">
+        @endif
+
         <div>
             <h1 class="text-xl font-semibold">Form Pengunaan Infaq</h1>
             <p class="text-sm text-gray-400 mt-1">
