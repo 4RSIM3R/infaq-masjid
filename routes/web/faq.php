@@ -10,5 +10,5 @@ Route::group(['prefix' => 'backoffice/faq', 'as' => 'faq.', 'middleware' => ['pe
     Route::get('{id}/edit', [FaqController::class, 'edit'])->name('edit');
     Route::put('{id}/edit', [FaqController::class, 'update'])->name('update');
     Route::get('{id}/show', [FaqController::class, 'show'])->name('show');
-    Route::post('{id}/delete', [FaqController::class, 'destroy'])->name('destroy');
+    Route::delete('{id}/delete', [FaqController::class, 'destroy'])->name('destroy');
 });

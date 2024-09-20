@@ -10,5 +10,5 @@ Route::group(['prefix' => 'backoffice/report', 'as' => 'report.', 'middleware' =
     Route::get('{id}/edit', [ReportController::class, 'edit'])->name('edit');
     Route::put('{id}/edit', [ReportController::class, 'update'])->name('update');
     Route::get('{id}/show', [ReportController::class, 'show'])->name('show');
-    Route::post('{id}/delete', [ReportController::class, 'destroy'])->name('destroy');
+    Route::delete('{id}/delete', [ReportController::class, 'destroy'])->name('destroy');
 });
