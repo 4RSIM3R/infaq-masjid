@@ -67,6 +67,7 @@
                         <div class="mb-5">
                             <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-900">No. Hp</label>
                             <input type="tel" id="phone_number" name="phone_number"
+                                value="{{ Auth::user()->phone_number }}"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md  block w-full p-2.5" />
                             @error('phone_number')
                                 <div class="mt-2">
@@ -130,8 +131,7 @@
                         <li class="py-3">
                             <div class="flex items-center">
                                 <div class="flex-shrink-0">
-                                    <img class="w-8 h-8 rounded-full"
-                                        src="{{ $report->thumbnail }}">
+                                    <img class="w-8 h-8 rounded-full" src="{{ $report->thumbnail }}">
                                 </div>
                                 <div class="flex-1 min-w-0 ms-4">
                                     <p class="text-sm font-medium text-gray-900 truncate ">
