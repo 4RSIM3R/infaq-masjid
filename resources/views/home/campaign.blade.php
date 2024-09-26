@@ -7,7 +7,8 @@
             <div class="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
                 @foreach ($campaigns['items'] as $data)
                     <div class="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white">
-                        <a href="{{ route('home.campaign_detail', $data->id) }}">
+                        <a href="{{ Auth::user() ? route('home.donation', $data->id) : route('auth.login') }}"
+                            class="flex-1 flex items-center justify-between border-t border-gray-200 p-4">
                             <div class="aspect-h-4 aspect-w-3 bg-gray-200 sm:aspect-none group-hover:opacity-75 sm:h-96">
                                 <img src="{{ $data->thumbnail }}"
                                     class="h-full w-full object-cover object-center sm:h-full sm:w-full">
@@ -18,7 +19,8 @@
                                         <span aria-hidden="true" class="absolute inset-0"></span>
                                         {{ $data->name }}
                                     </h3>
-                                    <p class="text-sm text-gray-500">{{ \Illuminate\Support\Str::limit($data->description, 50) }}</p>
+                                    <p class="text-sm text-gray-500">
+                                        {{ \Illuminate\Support\Str::limit($data->description, 50) }}</p>
                                 </div>
                                 <div class="flex justify-between">
                                     <p class="text-sm italic text-gray-500">Target</p>
