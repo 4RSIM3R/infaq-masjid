@@ -55,7 +55,7 @@
 
         <div class="mb-5">
             <label for="target" class="block mb-2 text-sm font-medium text-gray-900">Target</label>
-            <input type="number" inputmode="numeric" id="target" name="target"
+            <input type="text" inputmode="numeric" id="target" name="target"
                 value="{{ isset($data->target) ? $data->target : '' }}"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md  block w-full p-2.5" />
             @error('target')
@@ -101,3 +101,14 @@
 
     </form>
 @endsection
+
+@push('scripts')
+    <script>
+        new AutoNumeric('#target', {
+            digitGroupSeparator: '.',
+            decimalCharacter: ',',
+            decimalPlaces: 0, // No decimals
+            unformatOnSubmit: true // Unformat when the form is submitted
+        });
+    </script>
+@endpush

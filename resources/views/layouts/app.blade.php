@@ -52,7 +52,7 @@
                         <span class="sr-only">Toggle sidebar</span>
                     </button>
                     <a href="https://flowbite.com" class="flex items-center justify-between mr-4 w-56">
-                        <img src="{{ asset('white.png') }}" class="mr-3 w-12 h-12"  />
+                        <img src="{{ asset('white.png') }}" class="mr-3 w-12 h-12" />
                     </a>
                     {{-- <form action="#" method="GET" class="hidden md:block md:pl-2">
                         <label for="topbar-search" class="sr-only">Search</label>
@@ -84,10 +84,8 @@
                     <div class="hidden z-50 my-4 w-56 text-sm list-none bg-white divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 rounded-xl"
                         id="dropdown">
                         <div class="py-3 px-4">
-                            <span
-                                class="block text-sm font-semibold text-gray-900 ">{{ auth()->user()->name }}</span>
-                            <span
-                                class="block text-sm text-gray-900 truncate ">{{ auth()->user()->email }}</span>
+                            <span class="block text-sm font-semibold text-gray-900 ">{{ auth()->user()->name }}</span>
+                            <span class="block text-sm text-gray-900 truncate ">{{ auth()->user()->email }}</span>
                         </div>
                         <ul class="py-1 text-gray-700 dark:text-gray-300" aria-labelledby="dropdown">
                             <li>
@@ -177,6 +175,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.6.0/dist/autoNumeric.min.js"></script>
     @stack('scripts')
 
 </body>

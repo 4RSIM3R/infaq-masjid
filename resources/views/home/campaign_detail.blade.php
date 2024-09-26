@@ -78,7 +78,7 @@
                         </div>
                         <div class="mb-5">
                             <label for="amount" class="block mb-2 text-sm font-medium text-gray-900">Nominal</label>
-                            <input type="number" inputmode="numeric" min="0" id="amount" name="amount"
+                            <input type="text" inputmode="numeric" min="0" id="amount" name="amount"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md  block w-full p-2.5" />
                             @error('amount')
                                 <div class="mt-2">
@@ -152,3 +152,14 @@
 
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        new AutoNumeric('#amount', {
+            digitGroupSeparator: '.',
+            decimalCharacter: ',',
+            decimalPlaces: 0, // No decimals
+            unformatOnSubmit: true // Unformat when the form is submitted
+        });
+    </script>
+@endpush
